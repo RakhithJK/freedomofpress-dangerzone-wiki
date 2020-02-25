@@ -1,5 +1,3 @@
-# Installing Dangerzone
-
 ## Install in Windows
 
 Download Windows binaries from the [Releases](https://github.com/firstlookmedia/dangerzone/releases) page.
