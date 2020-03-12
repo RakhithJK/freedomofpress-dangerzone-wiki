@@ -60,4 +60,4 @@ sudo dnf install -y dangerzone
 
 ### Build from source
 
-If you'd like to build from source, follow the [build instructions](https://github.com/firstlookmedia/dangerzone/blob/develop/BUILD.md).
+If you'd like to build from source, follow the [build instructions](https://github.com/firstlookmedia/dangerzone/blob/master/BUILD.md).
