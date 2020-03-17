@@ -10,6 +10,8 @@ Download macOS binaries from the [Releases](https://github.com/firstlookmedia/da
 
 ### Debian or Ubuntu
 
+_Optional:_ If you'd like a newer version of Docker than the one that comes in your OS's repositories, following these instructions [for Debian](https://docs.docker.com/install/linux/docker-ce/debian/) or [for Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/) to install Docker CE first.
+
 Make sure you have `apt-transport-https` installed, and add the FLM code repository key:
 
 ```
