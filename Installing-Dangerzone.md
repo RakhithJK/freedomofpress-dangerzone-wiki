@@ -46,6 +46,8 @@ sudo apt install -y dangerzone
 
 ### Fedora
 
+Follow [these instructions](https://docs.docker.com/install/linux/docker-ce/fedora/) to install Docker CE, as it appears to work better than Docker that comes in the Fedora repositories.
+
 We have repositories for Fedora 30 and 31. Add this repository following [these instructions](https://packagecloud.io/firstlookmedia/code/install#manual-rpm), or by running this script:
 
 ```
