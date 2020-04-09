@@ -22,13 +22,9 @@ curl -L https://packagecloud.io/firstlookmedia/code/gpgkey | sudo apt-key add -
 
 Add the repository, depending on your operating system:
 
-- Ubuntu 18.04 (bionic)
+- Ubuntu 18.04 LTS (bionic)
   ```
   echo "deb https://packagecloud.io/firstlookmedia/code/ubuntu/ bionic main" | sudo tee -a /etc/apt/sources.list.d/firstlookmedia_code.list
-  ```
-- Ubuntu 18.10 (cosmic)
-  ```
-  echo "deb https://packagecloud.io/firstlookmedia/code/ubuntu/ cosmic main" | sudo tee -a /etc/apt/sources.list.d/firstlookmedia_code.list
   ```
 - Ubuntu 19.04 (disco)
   ```
