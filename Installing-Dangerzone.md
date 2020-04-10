@@ -8,7 +8,7 @@ Download macOS binaries from the [Releases](https://github.com/firstlookmedia/da
 
 ## Install in Linux
 
-### Debian or Ubuntu
+### Debian, Ubuntu, Linux Mint, Elementary OS
 
 _Optional:_ If you'd like a newer version of Docker than the one that comes in your OS's repositories, following these instructions [for Debian](https://docs.docker.com/install/linux/docker-ce/debian/) or [for Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/) to install Docker CE first.
 
@@ -22,7 +22,7 @@ curl -L https://packagecloud.io/firstlookmedia/code/gpgkey | sudo apt-key add -
 
 Add the repository, depending on your operating system:
 
-- Ubuntu 18.04 LTS (bionic)
+- Ubuntu 18.04 LTS (bionic), Linux Mint, Elementary OS
   ```
   echo "deb https://packagecloud.io/firstlookmedia/code/ubuntu/ bionic main" | sudo tee -a /etc/apt/sources.list.d/firstlookmedia_code.list
   ```
