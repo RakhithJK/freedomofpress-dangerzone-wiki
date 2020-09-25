@@ -26,13 +26,13 @@ Add the repository, depending on your operating system:
   ```
   echo "deb https://packagecloud.io/firstlookmedia/code/ubuntu/ bionic main" | sudo tee -a /etc/apt/sources.list.d/firstlookmedia_code.list
   ```
-- Ubuntu 19.04 (disco)
-  ```
-  echo "deb https://packagecloud.io/firstlookmedia/code/ubuntu/ disco main" | sudo tee -a /etc/apt/sources.list.d/firstlookmedia_code.list
-  ```
 - Ubuntu 19.10 (eoan)
   ```
   echo "deb https://packagecloud.io/firstlookmedia/code/ubuntu/ eoan main" | sudo tee -a /etc/apt/sources.list.d/firstlookmedia_code.list
+  ```
+- Ubuntu 20.04 (focal)
+  ```
+  echo "deb https://packagecloud.io/firstlookmedia/code/ubuntu/ focal main" | sudo tee -a /etc/apt/sources.list.d/firstlookmedia_code.list
   ```
 - Debian 10 (buster)
   ```
