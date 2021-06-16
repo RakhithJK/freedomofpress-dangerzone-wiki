@@ -10,38 +10,13 @@ Download macOS binaries from the [Releases](https://github.com/firstlookmedia/da
 
 ### Debian, Ubuntu, Linux Mint, Elementary OS
 
-_Optional:_ If you'd like a newer version of Docker than the one that comes in your OS's repositories, following these instructions [for Debian](https://docs.docker.com/install/linux/docker-ce/debian/) or [for Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/) to install Docker CE first.
+Following these instructions [for Debian](https://docs.docker.com/install/linux/docker-ce/debian/) or [for Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/) to install Docker CE.
 
-Make sure you have `apt-transport-https` installed, and add the FLM code repository key:
+Add our repository following [these instructions](https://packagecloud.io/firstlookmedia/code/install#manual-deb), or by running this script:
 
 ```
-sudo apt update
-sudo apt install -y curl gnupg apt-transport-https
-curl -L https://packagecloud.io/firstlookmedia/code/gpgkey | sudo apt-key add -
+curl -s https://packagecloud.io/install/repositories/firstlookmedia/code/script.deb.sh | sudo bash
 ```
-
-Add the repository, depending on your operating system:
-
-- Ubuntu 18.04 LTS (bionic), Linux Mint, Elementary OS
-  ```
-  echo "deb https://packagecloud.io/firstlookmedia/code/ubuntu/ bionic main" | sudo tee -a /etc/apt/sources.list.d/firstlookmedia_code.list
-  ```
-- Ubuntu 19.10 (eoan)
-  ```
-  echo "deb https://packagecloud.io/firstlookmedia/code/ubuntu/ eoan main" | sudo tee -a /etc/apt/sources.list.d/firstlookmedia_code.list
-  ```
-- Ubuntu 20.04 (focal)
-  ```
-  echo "deb https://packagecloud.io/firstlookmedia/code/ubuntu/ focal main" | sudo tee -a /etc/apt/sources.list.d/firstlookmedia_code.list
-  ```
-- Debian 10 (buster)
-  ```
-  echo "deb https://packagecloud.io/firstlookmedia/code/debian/ buster main" | sudo tee -a /etc/apt/sources.list.d/firstlookmedia_code.list
-  ```
-- Debian 11 (bullseye)
-  ```
-  echo "deb https://packagecloud.io/firstlookmedia/code/debian/ bullseye main" | sudo tee -a /etc/apt/sources.list.d/firstlookmedia_code.list
-  ```
 
 Install Dangerzone:
 
@@ -52,9 +27,9 @@ sudo apt install -y dangerzone
 
 ### Fedora
 
-Follow [these instructions](https://docs.docker.com/install/linux/docker-ce/fedora/) to install Docker CE. Make sure enable the service. (Docker CE appears to work better than Docker that comes in the Fedora repositories.) If you still have an issue with getting Docker working, [this may help](https://docs.docker.com/install/linux/docker-ce/fedora/). 
+Follow [these instructions](https://docs.docker.com/engine/install/fedora/) to install Docker CE.
 
-We have repositories for Fedora 30 and 31. Add this repository following [these instructions](https://packagecloud.io/firstlookmedia/code/install#manual-rpm), or by running this script:
+Add our repository following [these instructions](https://packagecloud.io/firstlookmedia/code/install#manual-rpm), or by running this script:
 
 ```
 curl -s https://packagecloud.io/install/repositories/firstlookmedia/code/script.rpm.sh | sudo bash
