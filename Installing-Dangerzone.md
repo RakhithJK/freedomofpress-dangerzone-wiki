@@ -1,12 +1,21 @@
-## Install in Windows
+## Install in Windows or macOS
 
-Download Windows binaries from the [Releases](https://github.com/firstlookmedia/dangerzone/releases) page.
-
-## Install in macOS
-
-Download macOS binaries from the [Releases](https://github.com/firstlookmedia/dangerzone/releases) page.
+Download Windows or macOS binaries from https://dangerzone.rocks/.
 
 ## Install in Linux
+
+We run a repositories with Dangerzone packages for these Linux distributions:
+
+- Ubuntu 21.04 (hirsute)
+- Ubuntu 20.10 (groovy)
+- Ubuntu 20.04 (focal)
+- Debian 11 (bullseye)
+- Debian 10 (buster)
+- Linux Mint 20 (ulyana)
+- Linux Mint 20.1 (ulyssa)
+- Fedora 34
+- Fedora 33
+- Fedora 32
 
 ### Debian, Ubuntu, Linux Mint
 
@@ -41,6 +50,6 @@ Install Dangerzone:
 sudo dnf install -y dangerzone
 ```
 
-### Build from source
+## Build from source
 
 If you'd like to build from source, follow the [build instructions](https://github.com/firstlookmedia/dangerzone/blob/master/BUILD.md).
