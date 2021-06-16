@@ -4,7 +4,7 @@ Download Windows or macOS binaries from https://dangerzone.rocks/.
 
 ## Install in Linux
 
-We run a repositories with Dangerzone packages for these Linux distributions:
+We run repositories with Dangerzone packages for these Linux distributions:
 
 - Ubuntu 21.04 (hirsute)
 - Ubuntu 20.10 (groovy)
