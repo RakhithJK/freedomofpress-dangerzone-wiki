@@ -8,7 +8,7 @@ Download macOS binaries from the [Releases](https://github.com/firstlookmedia/da
 
 ## Install in Linux
 
-### Debian, Ubuntu, Linux Mint, Elementary OS
+### Debian, Ubuntu, Linux Mint
 
 Following these instructions [for Debian](https://docs.docker.com/install/linux/docker-ce/debian/) or [for Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/) to install Docker CE.
 
