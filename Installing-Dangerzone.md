@@ -18,8 +18,6 @@ If you use one of these older Linux distros you must [install Docker CE first](h
 
 ### Debian, Ubuntu, Linux Mint
 
-Following these instructions [for Debian](https://docs.docker.com/install/linux/docker-ce/debian/) or [for Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/) to install Docker CE.
-
 Add our repository following [these instructions](https://packagecloud.io/firstlookmedia/code/install#manual-deb), or by running this script:
 
 ```
@@ -34,8 +32,6 @@ sudo apt install -y dangerzone
 ```
 
 ### Fedora
-
-Follow [these instructions](https://docs.docker.com/engine/install/fedora/) to install Docker CE.
 
 Add our repository following [these instructions](https://packagecloud.io/firstlookmedia/code/install#manual-rpm), or by running this script:
 
