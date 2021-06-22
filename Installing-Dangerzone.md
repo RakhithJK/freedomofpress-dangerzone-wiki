@@ -1,21 +1,20 @@
-## Install in Windows or macOS
-
-Download Windows or macOS binaries from https://dangerzone.rocks/.
-
-## Install in Linux
-
-We run repositories with Dangerzone packages for these Linux distributions:
+Dangerzone 0.2.1 is available for:
 
 - Ubuntu 21.04 (hirsute)
 - Ubuntu 20.10 (groovy)
-- Ubuntu 20.04 (focal)
 - Debian 11 (bullseye)
-- Debian 10 (buster)
-- Linux Mint 20 (ulyana)
-- Linux Mint 20.1 (ulyssa)
 - Fedora 34
 - Fedora 33
 - Fedora 32
+
+Dangerzone 0.2 is available for:
+
+- Ubuntu 20.04 (focal)
+- Debian 10 (buster)
+- Linux Mint 20 (ulyana)
+- Linux Mint 20.1 (ulyssa)
+
+If you use one of these older Linux distros you must [install Docker CE first](https://docs.docker.com/engine/install/) first.
 
 ### Debian, Ubuntu, Linux Mint
 
