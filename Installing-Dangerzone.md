@@ -9,22 +9,6 @@ Dangerzone 0.3 is available for:
 - Fedora 34
 - Fedora 33
 
-Dangerzone 0.2.1 is available for:
-
-- Ubuntu 21.04 (hirsute)
-- Ubuntu 20.10 (groovy)
-- Debian 11 (bullseye)
-- Fedora 34
-- Fedora 33
-- Fedora 32
-
-Dangerzone 0.2 is available for:
-
-- Ubuntu 20.04 (focal)
-- Debian 10 (buster)
-- Linux Mint 20 (ulyana)
-- Linux Mint 20.1 (ulyssa)
-
 If you use one of these older Linux distros you must [install Docker CE first](https://docs.docker.com/engine/install/).
 
 ### Debian, Ubuntu, Linux Mint
