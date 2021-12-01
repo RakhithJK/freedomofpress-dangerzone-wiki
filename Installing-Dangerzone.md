@@ -9,8 +9,6 @@ Dangerzone 0.3 is available for:
 - Fedora 34
 - Fedora 33
 
-If you use one of these older Linux distros you must [install Docker CE first](https://docs.docker.com/engine/install/).
-
 ### Debian, Ubuntu, Linux Mint
 
 Add our repository following [these instructions](https://packagecloud.io/firstlookmedia/code/install#manual-deb), or by running this script:
