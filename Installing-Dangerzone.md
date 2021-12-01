@@ -9,7 +9,7 @@ Dangerzone 0.3 is available for:
 - Fedora 34
 - Fedora 33
 
-### Debian, Ubuntu, Linux Mint
+### Ubuntu, Debian
 
 Add our repository following [these instructions](https://packagecloud.io/firstlookmedia/code/install#manual-deb), or by running this script:
 
