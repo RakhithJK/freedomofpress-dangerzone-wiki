@@ -1,13 +1,10 @@
 Dangerzone 0.3 is available for:
 
-- Ubuntu 21.10 (impish)
-- Ubuntu 21.04 (hirsute)
-- Ubuntu 20.10 (groovy)
+- Ubuntu 22.04 (jammy)
 - Debian 12 (bookworm)
 - Debian 11 (bullseye)
+- Fedora 36
 - Fedora 35
-- Fedora 34
-- Fedora 33
 
 ### Ubuntu, Debian
 
