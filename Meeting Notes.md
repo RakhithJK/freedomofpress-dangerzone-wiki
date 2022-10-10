@@ -69,3 +69,27 @@ Discussion:
 Action points:
 * deeplow: multi-document UI polish & limit number of parallel conversion
 * PR review strategy: avoid rewriting PR history when when the review has started. Preferably append commits but if some history needs to be rewritten or commit messages changed, then do it in new branch called [feature-branch]-N, where N is the iteration number. After OK from the original in-house contributor, force push into [feature-branch].
+
+# Monday - 2022-10-10
+
+deeplow:
+* addressed feedback in dangerzone#208
+* css & logic to settings in multi-document support (safe extension -safe.pdf and its customization)
+
+Alex:
+* Several meetings with Sec / UX people.
+* Finished the first pass of the review of [#208](https://github.com/freedomofpress/dangerzone/pull/208)
+* Took a look at [#157](https://github.com/freedomofpress/dangerzone/issues/157)
+
+Action points:
+* Alex: List the security vectors we need to treat first.
+* Alex: Share info for the Mac situation.
+* Alex: Edit, test, and merge [#208](https://github.com/freedomofpress/dangerzone/pull/208)
+* Alex: Begin the scoping discussion for reproducible builds.
+* Deeplow: finish multi-document support in GUI (limit threads & finish styling)
+
+Discussions:
+* reproducible builds:
+  * dependencies: poetry.lock
+  * for system packages: have a debian snapshot
+  * we might want to tackle debian first as this is where we / the SecureDrop team has the most experience
