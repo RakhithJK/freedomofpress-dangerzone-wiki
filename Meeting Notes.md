@@ -93,3 +93,22 @@ Discussions:
   * dependencies: poetry.lock
   * for system packages: have a debian snapshot
   * we might want to tackle debian first as this is where we / the SecureDrop team has the most experience
+
+# Wednesday - 2022-10-12
+
+Alex:
+* Shared an update regarding Mac.
+* Very close to merging [#208](https://github.com/freedomofpress/dangerzone/pull/208).
+* Didn't manage to work on the security and reproducible builds issue.
+
+Deeplow:
+  * Deeplow: multi-document support in GUI: limit threads & add progress icons
+    * QThreads implementation is leading to a race condition; Alex suggests we might need to use GDB. Probably inspect the core dump
+
+Action points:
+  * Test #208 on Windows as well.
+  * (leftover) Alex: Begin the scoping discussion for reproducible builds.
+  * (leftover) Alex: List the security vectors we need to treat first.
+  * deeplow: review Alex's work on #208 and force-push
+  * deeplow: fix Concurrency issues with conversion thread limit
+  * deeplow: finish multi-document styling (aligned progress bars)
