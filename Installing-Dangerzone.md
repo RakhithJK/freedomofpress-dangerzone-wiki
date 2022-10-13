@@ -1,7 +1,6 @@
 Dangerzone 0.3 is available for:
 
 - Ubuntu 22.04 (jammy)
-- Debian 12 (bookworm)
 - Debian 11 (bullseye)
 - Fedora 36
 - Fedora 35
