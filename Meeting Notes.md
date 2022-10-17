@@ -112,3 +112,25 @@ Action points:
   * deeplow: review Alex's work on #208 and force-push
   * deeplow: fix Concurrency issues with conversion thread limit
   * deeplow: finish multi-document styling (aligned progress bars)
+
+# Monday - 2022-10-17
+
+Alex:
+* Started the umbrella issue for defense in depth.
+* Found some failing tests on the main branch on Windows.
+* Python 3.9 is not easy to install for developers on Linux (deadsnakes repo)
+  and Windows (official installer harder to found).
+
+Deeplow:
+* Fixed concurrency issues with conversion thread limit.
+
+Action points:
+* Alex: Create subtasks for defense in depth, get ACK from rest of people.
+* Alex: Fix the failing tests on Windows.
+* Alex: Probably don't drop the commit that drops the Alert class because we'll
+  need it
+* deeplow: finish multi-document styling (align progress bars), add alert box
+  for when exiting while conversion in progress, increase converstion timeout
+  when multiple docs being converted.
+* Alex: Update the instructions for developing Dangerzone on Linux (add poetry
+  reference)
