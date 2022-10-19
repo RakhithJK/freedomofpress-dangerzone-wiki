@@ -134,3 +134,31 @@ Action points:
   when multiple docs being converted.
 * Alex: Update the instructions for developing Dangerzone on Linux (add poetry
   reference)
+
+# Wednesday - 2022-10-19
+
+Alex:
+* Elaborate on defense in depth subtasks
+* went through the Windows unittests and will add that a PR
+
+Deeplow:
+* Finished a big portion of the multi-document support.
+* Timeout part remaining, will require merging a PR by a contributor.
+* Improve thread handling: stopping threads is not straight-forward.
+
+Discussion:
+* updating dangerzone - how to detect new updates (separate issue)
+* separating the container from the download is important
+* supporting ubuntu focal:
+  - podman is not available in the 20.04 repos and would require documenting
+    how to add external dependencies.
+  - Add note for ubuntu focal in the installation wiki and add instructions.
+
+Action points:
+* deeplow: create issue for minimizing software in container
+* deeplow: Look into stopping threads in multi-document
+* deeplow: comment on security in depth issues
+* deeplow: final review of python 3.10 bump
+* Alex: do PR for window tests
+* Alex: give a look at [#167](https://github.com/freedomofpress/dangerzone/pull/167/commits) and ACK it.
+* Alex: update ubuntu focal install (& test on focal) instructions
