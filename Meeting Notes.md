@@ -162,3 +162,30 @@ Action points:
 * Alex: do PR for window tests
 * Alex: give a look at [#167](https://github.com/freedomofpress/dangerzone/pull/167/commits) and ACK it.
 * Alex: update ubuntu focal install (& test on focal) instructions
+
+# Monday - 2022-10-24
+
+deeplow:
+* Created a template for Dangerzone presentations.
+* Tested submitting a package to packages.freedom.press.
+* Checked out the Windows unit tests and wrapped up the review.
+
+Alex:
+* Sent PR for Windows unit tests dangerzone#235
+* Able to GPG-sign as alex.p@freedom.press.
+* CVE assessments for Dangerzone.
+
+Discussion:
+* the timeout is failing sometimes. How do we solve this?
+  - idea: make timeouts proportional to a benchmark ran on first run (might not be good because CPU bursts exist)
+  - idea: more leninent timeout (disadvantage: the user can't have an estimate)
+  - better approach: add watchers on subprocess commands
+* Probably the extra dependency from GitLab can be removed, if we side-step the "spliting the pdf into pages" step.
+  - We could also split the PDF using tools from the official repos, such as Poppler.
+
+Action points:
+* Alex: Add/Suggest content for Dangerzone presentation.
+* deeplow: merge commit for dangerzone#161
+* deeplow: (re-review) dangerzone#235
+* deeplow: Start with Seccomp issue.
+* Alex: Merge the Debian/Fedora PRs.
