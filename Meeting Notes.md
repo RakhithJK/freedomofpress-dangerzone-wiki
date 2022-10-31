@@ -247,3 +247,26 @@ Untracked (not exhaustive list):
 * Build and upload Linux packages, MacOS and Windows binaries
 * Perform QA on all platforms.
 * Homebrew bump release hash & number.
+
+# Monday - 2022-10-31
+
+Deeplow:
+* Fixed and merged dangerzone#208
+* Merged Debian 12 and Fedora 37 support (dangerzone#230 / dangerzone#233)
+* Rebased PRs 2/3 and 3/3 regarding multi doc support
+* Tested out Ubuntu 22.04 on our CI runners, but encountered issues.
+* Checked out the Alpine status wrt reproducible builds.
+* Started working on the seccomp issue.
+
+Alex:
+* merged the windows unittest PR
+* acked the PRs for Fedora, Debian & the refactor container
+* reviewed the part 2 PR for the multi-doc support (#201)
+* opened a few small fixes PRs
+* added a couple of stuff to the internal wiki
+
+Action points:
+* deeplow: Create an issue about handling error messages from the dangerzone
+  container, and the security/UX impliciations that this has.
+* Alex: 2nd pass of the dangerzone#201
+* Alex: update ubuntu focal install (& test on focal) instructions
