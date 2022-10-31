@@ -189,3 +189,61 @@ Action points:
 * deeplow: (re-review) dangerzone#235
 * deeplow: Start with Seccomp issue.
 * Alex: Merge the Debian/Fedora PRs.
+
+# Wednesday - 2022-10-25
+
+* Estimate time for each issue in prep for mgmt meeting
+
+Deeplow:
+* deeplow: merge commit for dangerzone#161
+* deeplow: (re-review) dangerzone#235
+* deeplow: (re-review) dangerzone#208
+
+Alex:
+* Merged the dangerzone#235 PR
+
+## Estimations
+
+Sizes: XS, S, M, L
+Fibonacci-like increments: XS = 1 hour, S = 4 hours (1 day), M = 8 hours (2
+days), L = 16 hours (4 days),
+
+* #205: (GUI part of #77)
+* #206: Dev: M, Review: XS -> ~2 days
+* #188: Scoping: M -> ~2 days
+* #77:  Dev: L, Review: M -> 6 days (d: 2 weeks more realistically)
+* #204: (GUI part of #77)
+* #207: Dev: S, Review: S -> ~2 days (d: 1 hour)
+* #209: Dev: S, Review: M -> ~3 days (d: 1 week more realistically) <- + #205 = multi-doc support (CLI)
+* #220: (part of untracked)
+* #233: Dev: -, Review: XS -> 1 hour
+* #230: Dev: -, Review: XS -> 1 hour
+* #225: Dev: L, Review: M -> 6 days (d: 4 days)
+* #227: Dev: M, Review: S -> 3 days
+* #228: Dev: M, Review: S -> ~3 days
+* #224: Dev (only removing sudo & ro fs): S, Review: XS -> ~1 day
+* #232: Dev (only replace pdftk deps): S, Review: XS: -> 1 day
+* #157: (part of #228)
+
+Total time: 35 days * 4 hours / 45 hours per week = 3.1 weeks = ~17th of
+November
+
+If we remove:
+* #188 (Reproducible builds): -2 days
+* #77 (GUI): -9 days (-10 days +1 day for backporting #205 & #204) <- keep that
+* #207 (Prevent running DZ): -2 days
+* #224 (Prevent root): -1 day
+* #232 (replace pdftk): -1 day -> maybe bump to 0.5.0
+* #224 (remove sudo & ro fs): -1 day
+
+Remaining: 20 days * 4 hours / 45 hours per week = 1.8 weeks = ~8th of November
+
+Plus GUI: 29  * 4 hours / 45 hours per week = 2.6 weeks = ~14th of November
+
+Untracked (not exhaustive list):
+* Provisioning/accessing Mac Minis,
+* Signing on Windows and MacOS
+* Changes to the website and GitHub
+* Build and upload Linux packages, MacOS and Windows binaries
+* Perform QA on all platforms.
+* Homebrew bump release hash & number.
