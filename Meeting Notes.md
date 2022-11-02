@@ -270,3 +270,24 @@ Action points:
   container, and the security/UX impliciations that this has.
 * Alex: 2nd pass of the dangerzone#201
 * Alex: update ubuntu focal install (& test on focal) instructions
+
+# Wednesday - 2022-11-02
+
+Alex:
+* Sent PR for Ubuntu Focal support.
+* Minor PRs Changelog, Poetry.lock files, Poetry instructions.
+* Done with the review of dangerzone#216
+  - Tried out asyncio support successfully.
+
+Deeplow:
+* address review comments for dangerzone#216
+  * figure out alternative strategy for avoiding wildcard injection vulns by the
+	user mistakenly running `$ dangerzone *` on a maliciously crafted document
+    set.
+  * rebase branches based on it
+
+Discussion:
+* Regarding the asyncio support, let's merge this PR first, and then see if we can add it in the GUI PR.
+
+Action points:
+* Alex: Start looking at AppArmor
