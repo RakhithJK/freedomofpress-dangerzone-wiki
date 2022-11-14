@@ -291,3 +291,52 @@ Discussion:
 
 Action points:
 * Alex: Start looking at AppArmor
+
+# Monday - 2022-11-14
+
+Alex:
+* Final review of dangerzone#209
+* First round of comments for dangerzone#247
+* Created a draft PR for Linux User Namespaces.
+
+Deeplow:
+* final review of dangerzone#241 (ubuntu focal support)
+* address feedback in dangerzone#209 (multi-doc cli support)
+* investigate way to reliably detect seccomp policy violation (dangerzone#225)
+
+Discussion:
+* Seccomp policy violation detection: have a way to say to the user that opening
+  the document failed in the sandbox -- discourage the document opening. -> A
+  way to contact the dangerzone team to solve the situation
+*  maybe a static analysis tool to check if what syscalls certain documents
+   types lead to. This could make us more sure about
+* for 0.4.0 we may not be able to give users a foolproof way to detect a seccomp
+  violation -> open issue for this
+* UX feedback on multi doc conversion:
+  * Selecting a directory would be great, but let's not have it in this PR.
+  * Selecting files from different directories requires two steps (one to add
+    files, and one to add more). Let's add this in a next release.
+  * Seeing the files takes real estate from the settings. Having two tabs for
+    settings will require quite a bit of work. This is better suited for a next
+    release.
+  * Let's use the full path of the directory where we will save the converted
+    files
+  * In general, UX-wise, having safe files with `-safe.pdf` may not help users,
+    because they may erroneously choose the unsafe (and shorter) file name. In
+    Qubes TrustedPDF, the original files are moved to an "untrusted files"
+    directory. We could have a checkbox in the setings for that.
+  * We could have a mode where we allow the user to change the output filename,
+    if they convert a single file.
+  * Once the conversion ends, let's show the original filename.
+  * We have a bug where OCR gets applied the next time we run Dangerzone.
+  * Showing full context for a single conversion (logs, tracebacks) is something
+    we should consider when we discuss the UX side of things, but not right now.
+
+Action points:
+* Alex: Jump on board the seccomp PR.
+* Alex: Document how we should do QA on Dangerzone.
+* Alex: Write down UX comments that we want to consider in the future on dangerzone#117.
+* Alex: Review dangerzone#210.
+* Alex: Create PR for linting unused imports.
+* Deeplow: Do some fixes on dangerzone#247 based on Alex's review comments.
+* Deeplow: Ask for feedback on the idea of moving untrusted files to subdirectory
