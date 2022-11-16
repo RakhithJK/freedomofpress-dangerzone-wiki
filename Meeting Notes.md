@@ -340,3 +340,18 @@ Action points:
 * Alex: Create PR for linting unused imports.
 * Deeplow: Do some fixes on dangerzone#247 based on Alex's review comments.
 * Deeplow: Ask for feedback on the idea of moving untrusted files to subdirectory
+
+
+# Wednesday - 2022-11-02
+
+Alex:
+* Dived into seccomp and gVisor.
+
+Deeplow:
+* Changing the box for the output filename to allow arbitrarily naming for single file conversions turned out to be more difficult.
+* Almost done with the fixes in dangerzone#247.
+* Started to work on moving the unsafe files on a separate directory, kind of like Qubes TrustedPDF does.
+
+Action points:
+* Alex: Send a PR for bumping the timeout.
+* Deeplow: Open issue for missing documentation for the whole project.
