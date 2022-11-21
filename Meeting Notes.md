@@ -1,3 +1,38 @@
+# Monday - 2022-11-21
+
+Deeplow:
+* reviewed QA proposal PR
+* Opened issue for missing documentation for the whole project - and created
+  branch with code implementation (will open PR soon)
+
+Alex:
+* Sent a QA proposal for release testing.
+* found way to open documents
+* Finished the review of dangerzone#247
+* Started looking at linting unusued imports.
+
+Discussion:
+* The infra may not be there before the feature freeze. We need to address this
+  somehow, while still contributing to `main`.
+* Timeout increase - why are there timeouts? (investigate)
+  - Per our discussion, it seems that it would be best if we have a soft
+    timeout; warn the user that the conversion takes too long, and ask them if
+    they want to skip OCR.
+* Things we want to have ready by the feature freeze:
+  - Better timeouts (discussed above)
+  - Option to move untrusted files into subdirectory after conversion
+    (dangerzone#251)
+  - QA tests (dangerzone#246)
+
+Action Points:
+* Alex: check out the final changes for dangerzone#247.
+* Alex: investigate timeout issues and make a PR for not limiting timeout (see
+  discussion)
+* Alex: post thread about our "soft timeout" ideas and ask Micah for ack
+* deeplow: merge dangerzone#247
+* deeplow: open PR for dangerzone#251
+* deeplow take a look at the linux-namespace support dangerzone#248
+
 # Wednesday - 2022-11-16
 
 Alex:
