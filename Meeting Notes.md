@@ -342,7 +342,7 @@ Action points:
 * Deeplow: Ask for feedback on the idea of moving untrusted files to subdirectory
 
 
-# Wednesday - 2022-11-02
+# Wednesday - 2022-11-16
 
 Alex:
 * Dived into seccomp and gVisor.
