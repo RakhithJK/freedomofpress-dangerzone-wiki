@@ -105,7 +105,7 @@ Action points:
 * Alex: 2nd pass of the dangerzone#201
 * Alex: update ubuntu focal install (& test on focal) instructions
 
-# Wednesday - 2022-10-25
+# Wednesday - 2022-10-26
 
 * Estimate time for each issue in prep for mgmt meeting
 
