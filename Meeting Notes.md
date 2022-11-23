@@ -1,3 +1,30 @@
+# Wednesday - 2022-11-23
+
+Alex:
+* Proposed an implementation for skipping slow steps in GUI.
+* Worked on publishing a Debian package on apt-tools-prod.
+* Reviewed dangerzone#247.
+
+Deeplow:
+- finished work on dangerzone#255 (opt to move untrusted files)
+- give more feedback on QA process for Dangerzone
+
+Discussion:
+- timeouts: for this release
+  - double timeout to 2m
+  - for this release "disable parallel conversions" by setting the max threads to 1
+- Version migration in QA tests:
+  - "Install the previous version of Dagnerzone, and tick some non-default settings"
+  - "Install the new version of Dangerzone system-wide, and ensure those settings exist"
+  - Do `grep -f share/image-id.txt <(podman images)`
+
+Action Points:
+- Deeplow: open PR for showing number of selected docs while in settings
+- Deeplow: open PR for disabling parallel conversions
+- Alex: Review dangerzone#255
+- Alex: open PR for doubling timeout
+- Alex: Address comments for QA PR
+
 # Monday - 2022-11-21
 
 Deeplow:
