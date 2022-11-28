@@ -1,3 +1,29 @@
+# Monday - 2022-11-28
+
+Deeplow:
+* started QA on Fedora, found out that it has Python 3.11 version.
+* worked on MacOS QA. Posted update [here](https://github.com/freedomofpress/dangerzone/issues/263#issuecomment-1327482860)
+
+Alex:
+* Found out that Ubuntu 22.10 "Kinetic Kudu" has been released 1 month ago -
+should be supported. Sent a PR for that
+* tested on debian buster (will still be supported for a year from now) -
+doesn't have podman, but the instructions are the same as ubuntu 20.04 - some
+more libs are required (buster backport, libseccomp)
+
+Discussion
+* dangerzone#269 - change the default app window on MacOS
+* Python3.10 isn't installed on Fedora 37. We need to check if Dangerzone works
+with Python 3.11, and bump the dependency on Poetry.
+
+Action points:
+* deeplow: address dangerzone#269 and other MacOS related issues
+* deeplow: Check Python 3.11 in his Fedora environment
+* Alex: Complete QA process on Windows and ubuntu 22.04 / 22.10
+* Alex: send PR for QA script
+* Alex: Review deeplow's PRs
+* Alex: Check out Dangerzone on a real Kinetic Kudu
+
 # Wednesday - 2022-11-23
 
 Alex:
