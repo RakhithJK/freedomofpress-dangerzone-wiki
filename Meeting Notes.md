@@ -1,3 +1,84 @@
+# Monday - 2022-12-12
+
+Alex:
+* Trying to wrap up the QA PR, currently ~1K LOC. Will contain scripts for
+  building Linux environments where Dangerzone can run, a script that follows
+  our QA steps, and run CI tests for Fedora and other flavors on CircleCI.
+* TODO: Meeting notes that I need to update.
+* TODO: Open some GitHub issues for the next release.
+* TODO: Create a PR for linting unused imports.
+
+Deeplow:
+* Debugging https://github.com/freedomofpress/dangerzone/issues/217# with Alex
+* TODO: deeplow fix dangerzone#217 with discussed approach
+* TODO: investigate package availability on all supported OSes #211
+
+Discussion:
+* Fixing dangerzone#217 - if podman version <4.0.0  then we run tests
+  sequentially
+
+# Wednesday - 2022-12-07
+
+Alex:
+* I'll take a look at dangerzone#284. Looks good, and I might add some things as
+  well.
+* Working on the QA PR, I'll try to also add it in the CircleCI configuration.
+
+Deeplow:
+* Resumed on research about thumbnails and background reads of the file on
+  MacOS.
+  - Even if you disable thumbnail previews, downloading the file from Safari
+    passes through the Indexer / thumbnail preview pipeline.
+  - Will report the full findings
+  - Maybe it makes sense to include our findings in the section on how one can
+    still get hacked, even with Dangerzone.
+
+# Monday - 2022-12-05
+
+We have a release!
+
+Alex:
+* Reviewed the README PR
+* Retrospective on release and consideration on which issues are release
+  papercuts that can be improved
+
+Deeplow:
+* Sent a PR for updating Homebrew
+  ([homebrew-cask#136918](https://github.com/Homebrew/homebrew-cask/pull/136918))
+* Sent a PR for updating the screenshots in the README dangerzone#282
+
+Action points:
+* Alex: Sent a PR for dangerzone.rocks with the new screenshots.
+* Alex: Send PR for Spin Linux environments...
+* Alex: Check CI tests on MacOS / Windows
+* Deeplow: Work on Bug: cannot install with Onionshare #153
+* Deeplow: Evaluate if Disable previews/thumbnails is effective #65 and after
+  that tests fail non-deterministically.
+
+Discussion:
+
+## Candidate Issues for Releases
+
+Small issues that can help subsequent releases:
+
+* Documentation: Disable previews/thumbnails #65
+  - May take more time, since it's a complex issue.
+* Bug: cannot install with Onionshare #153
+* Support building on M1 macs #177
+* Migrate to Qt6 before Qt5 end-of-life #211
+* Test packages.freedom.press workflow #220
+* tests fail non-deterministically (Error: error retrieving size of image) #217
+* Get the Dangerzone version from the GUI and CLI #219
+* Automated Testing in Windows & Mac #229
+* "Open with" on Windows shows Dangerzone Description instead of "Dangerzone" #283
+* Spin Linux environments for various distros/versions
+  - Document how to setup X11/Wayland forwarding within a container.
+
+Issues for a 0.5.0 release:
+
+* Defense in Depth: ...
+* User research: ...
+
 # Monday - 2022-11-28
 
 Deeplow:
