@@ -1,3 +1,30 @@
+# Wednesday - 2022-12-14
+
+Deeplow:
+* Make fix for instability issue dangerzone#217 (with PR  dangerzone#288) and
+  make a script to identify podman version where the root cause issue was fixed
+  (it wasn't in the release notes)
+* Quick investigation on the state of Pyside6 (Qt6) availability in distros (it
+  doesn't look promising) - dangerzone#211
+* TODO: review https://github.com/freedomofpress/dangerzone/pull/289
+
+Alex:
+* Created an issue for Qt testing.
+* Created an issue for using packages.freedom.press for APT packages.
+* Created an issue for failing CI tests
+* Created a milestone for 0.4.1. We should discuss priorities for them and
+  divide tasks.
+  - We did that and assigned a custom order to the issues:
+    https://github.com/freedomofpress/dangerzone/milestone/10
+
+Discussion:
+* It seems that the python3-pyside6 package is available only on PyPI, and not
+  any distro repos (see https://github.com/freedomofpress/dangerzone/issues/211)
+  - We need to have some next steps on this:
+    * Find an alternative?
+    * Contact the Qt devs?
+    * Ask Debian devs?
+
 # Monday - 2022-12-12
 
 Alex:
