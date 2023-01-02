@@ -1,3 +1,32 @@
+# Monday - 2023-01-02
+
+Deeplow:
+- Reviewing QA semi-automation (dangerzone#289).
+  - detect when platform build instructions changed (so qa.py and BUILD.md don't get out of sync)
+- Reinstalled windows system and re-built testing environment
+  - played a bit with installing dangerzone and onionshare at the same time to reproduce (unsuccessfully) dangerzone#153
+- Show dangerzone version in CLI and GUI (dangerzone#295)
+- Address PR feedback in DZ website (dangerzone.rocks#7)
+- Make fix for "Open With" dialog on Windows showing the DZ description instead of the app name (dangerzone#297)
+- Address comments about a potential DZ flatpak version
+- Add PySide6 support to MacOS and Windows (dangerzone#296)
+- Played around with bundling pyside6 with .debs (will be needed see dangerzone#211)
+  - In particular, investigate bundling PySide6 .whl with an RPM  package
+- start work in incapsulating isolation provider (containers) as a path towards dangerzone#229
+
+Alex:
+- Fixed an issue in the Circle CI builds (https://github.com/freedomofpress/dangerzone/pull/293)
+- Review comments on some PRs (dangerzone#288)
+- Stared working on using packages.freedom.press for Debian packages.
+
+Action points:
+- deeplow: update issue dangerzone#229 and continue working on it
+- Alex: Address feedback on dangerzone#289.
+- Alex: Review dangerzone#{295, 296, 297, 300}
+- deeplow: merge dangerzone.rocks#7
+- deeplow: address comments in dangerzone#288
+- deeplow: ping ro about dangerzone#284
+
 # Wednesday - 2022-12-14
 
 Deeplow:
