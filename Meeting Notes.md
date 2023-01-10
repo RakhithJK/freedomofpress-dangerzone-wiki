@@ -1,3 +1,30 @@
+# Monday - 2023-01-09
+
+Deeplow:
+- merge dangerzone.rocks#7
+- Addressed comments in dangerzone#288 - ready for merge
+- dangerzone#284 is ready to merge -- additonal changes will follow in another PR (as they were extra)
+- dangerzone#248 - Implement Linux User Namespaces support - reviewed
+- discussion with @eaon about SecureDrop integration details
+- TODO: submit PR to dangerzone.rocks to add security note in about.html
+- TODO: re-evaluate dependencies dangerzone#232
+
+Alex:
+- Made almost all of the changes we discussed on dangerzone#289.
+  * We have some deps that where missing, and some system libraries that
+- Testing those changes locally and on our CI.
+
+# Wednesday - 2023-01-04
+
+Alex:
+- Going through the review comments on dangerzone#289
+
+Deeplow:
+- Moving on with dangerzone#229, where we have in the works a dummy driver for Dangerzone conversions
+  * This dummy driver will not do any actual conversion, which means that it does not test a class of problems. It will merely test that pre-conversion / post-conversion works.
+- TODO: outstanding tasks from last meeting
+- dangerzone#229: add windows / macOS to CI and run the cli tests
+
 # Monday - 2023-01-02
 
 Deeplow:
