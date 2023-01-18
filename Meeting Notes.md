@@ -1,3 +1,31 @@
+# Wednesday - 2023-01-18
+
+Alex:
+- Reviewed all open PRs except for dangerzone#310
+- I haven't tested the dangerzone#305 PR, because there are things that contend for disk space.
+  * I think I will have disk space today.
+- Stumbled on an issue regarding apt-tools-prod: there's a hash mismatch type of error that I'm not sure how to deal with.
+  * I've started a discussion with Maeve on that subject.
+  * I'll work on updating our installation instructions for packages.freedom.press on Debian, so that we can have them ready once the apt-tools-prod issue is resolved.
+  * Fun fact: At least in our 0.4.0 release (haven't checked yet on `main`), the Debian debs have the exact same hash. Same applies to the Ubuntu debs, but they have a different hash from the Debian one. Not sure how we can use this fact, as it can change from release to release.
+
+Deeplow:
+- investigating why exceptions in conversion process where not raised (opened issue at dangerzone#309)
+- retest pyside6 support in remote mac (dangerzone#296)
+- address feedback in isolation provider abstraction (dangerzone#302)
+
+Action items:
+- Alex:
+  * Review dangerzone#310
+  * Test dangerzone#305
+  * Second pass of the rest of the PRs.
+  * Recheck the state of dangerzone#294 (Fedora 37 build environment)
+  * Create PR for packages.freedom.press instructions
+  * (stretch) Start seting up Thinkpad for Windows testing
+- Deeplow:
+  * TODO: continue addressing PR feedback
+  * TODO: What's the state with RPM updates.
+
 # Monday - 2023-01-16
 
 Alex:
