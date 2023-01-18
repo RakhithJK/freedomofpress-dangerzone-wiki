@@ -1,3 +1,33 @@
+# Monday - 2023-01-16
+
+Alex:
+- Reviewed dangerzone#{295,296,297,301,302}
+- Will merge today dangerzone#289
+- TODO: Review dangerzone#30{3,4,5}
+- TODO: Push the latest 0.4.0
+
+Deeplow:
+- TODO: Fix the mypy lint errors on the PR for PySide6
+- TODO: Finish addressing open PR comments
+- TODO: Tuesday - check how the RPM package publishing status is
+- TODO: (strech) try to reproduce again dangerzone#153 (installing w/ onionshare)
+
+# Wednesday - 2023-01-11
+
+Deeplow:
+- Submited PR to dangerzone.rocks to add security note in about.html (dangerzone.rocks#8)
+- Merged Qubes build instructions (dangerzone#284)
+- Finished removal of unused dependencies in container image dangerzone#305 (PDFtk in particular)
+- Continue work on seccomp stuff. Reading up the paper behing the "confine" tool and playing around with it
+
+Alex:
+- Addressed all the review comments on dangerzone#289.
+- Added some extra environments for testing (Fedora 35, Debian Bookworm, Ubuntu Jammy).
+
+Discussion:
+- using "confine" approach for seccomp policy
+- considering gvisor - doesn't need as many syscalls
+
 # Monday - 2023-01-09
 
 Deeplow:
