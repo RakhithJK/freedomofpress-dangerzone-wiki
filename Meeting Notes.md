@@ -1,3 +1,32 @@
+# Monday - 2023-01-23
+
+Deeplow:
+- reorganize isolation provider PR to have isolation providers as separate files
+- investigate a bit PyMuPDF as dependency alternative for processing PDF files. ((part of dangerzone#305)
+- Make PDF conversion faster (dangerzone#305)
+- Meeting w/ infra team for updates regarding the readyness for the next release
+
+Alex:
+- Fixed Poetry issue in our CI builds.
+- Worked on packages.freedom.press
+  * Tested it out on a container.
+  * Wrote down the current workflows for devs/users.
+  * We need to improve these workflows, especially as development requirements are ~2.5hours of build time and 45GiB of space.
+- Made a review pass of all the open PRs
+- Left out: Fedora 37 instructions, setup Thinkpad
+
+Discussion:
+- What to do about the lint on macOS? (dangerzone#296)
+  - create an issue that we can't have mypy liting on ARM macs and pyside6
+  - change make lint to say: "on m1 macs it can't run; see issue #???"
+- packages.freedom.press workflow:
+  - It's not practical to have the package building take so much time and space.
+  - Might be worth having a runner and verifying the built packages locally.
+  - Else, we will have to bite the bullet and do it ourselves.
+
+Action items:
+- deeplow: simple fix for (discussion on macOS linting)
+
 # Wednesday - 2023-01-18
 
 Alex:
