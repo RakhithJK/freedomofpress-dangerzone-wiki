@@ -1,3 +1,49 @@
+# Wednesday - 2023-01-25
+
+Alex:
+- Looked into [dangerzone#294](https://github.com/freedomofpress/dangerzone/issues/294)
+  * Qt devs still haven't published a PySide2 version that supports Python 3.11
+  * TODO: Open an issue for that on their issue tracker.
+- Looked into our Fedora 37 installation issue:
+  * Root cause: we deployed a Fedora 35 package to our Fedora 37 repo, which installs Dangerzone for Python 3.10
+  * Suggestion: Create a new package (`0.4.0-2`) solely for Fedora 37, push it in a `hotfix-0.4` branch and tag it as `v0.4.0-2`
+
+Deeplow:
+- debugging CI issues on windows
+- merge CI failure (re-fix) (dangerzone#312)
+- add timeout proportional to # of pages in to PDF->Images code and merge (dangerzone#232)
+- debugging multiple issues introduced by dangerzone#306 after merging (didn't find the root cause yet)
+
+Discussion:
+- How to find bugs in the conversion process. Currently our conversion process supresses error messages from the ran commands (e.g. libreoffice, tesseract).
+  - We need to get the output of these commands in development mode
+- Security Idea: move conversion error strings to host, container sends numeric ID and page number.
+- Visual document diffing tests for catching changes (no, Dangerzone does not convert deterministically -- hashes are not possible)
+  - https://pypi.org/project/diff-pdf-visually/#description
+  - we only have to run this on linux tests
+- Fedora 37 package issue:
+  * There is a `hotfix-0.4` branch that is ready to tag as v0.4.0-2.
+  * Only Fedora 37 packages will be deployed.
+- General packaging improvements:
+  * The following are suggestions only.
+  * Ideally do not bundle Dangerzone with the .deb/.rpm package.
+  * Let the builder build those packages, add them in the Git LFS repo, sign them and send the PR.
+  * Let the maintainer verify these packages out-of-band (compare with source files), and resign the packages, and accept the PR.
+
+Action items:
+- deeplow: Check hotfix-4.0 for fedora branch https://github.com/freedomofpress/dangerzone/commits/hotfix-0.4
+- deeplow: merge #302, then #303
+- deeplow: address review comment in #313
+- deeplow: After #313 is merged, open PR for exiting with non-zero if conversion failed (cli + gui)
+- deeplow: report issue where tesseact guesses DPI even though it's passed as an argument.
+- deeplow: (stretch) investigate error reporting in GUI: if unexpected conversion message it will stop showing progress information and just freezes. But in reality the document is still converting
+- Alex: Fix the Fedora 37 packaging issue.
+- Alex: Take over dangerzone#296.
+- Alex: Add JDK again as dependency and test affected file conversion dangerzone#315
+- Alex: Check why/if `__pycache__` files exist in RPM packages.
+- Alex: open issue for discussed visual output diffing
+- Alex: Check out if LibreOffice has a way to report conversion warnings.
+
 # Monday - 2023-01-23
 
 Deeplow:
