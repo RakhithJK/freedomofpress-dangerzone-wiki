@@ -1,3 +1,39 @@
+# Monday - 2023-01-30
+
+Alex:
+- Fixed a regression in our Fedora 37 package ([dangerzone#156](https://github.com/freedomofpress/dangerzone/issues/156#issuecomment-1403237354)
+- Continued the work on [dangerzone#296](https://github.com/freedomofpress/dangerzone/pull/296)
+  * We can switch to types-PySide2 instead of PySide2-stubs, and sidestep the linting errors on MacOS M1.
+- Opened [dangerzone#320](https://github.com/freedomofpress/dangerzone/issues/320) to track the PySide6/Mypy problem
+- Started working on [dangerzone#315](https://github.com/freedomofpress/dangerzone/issues/315)
+- Opened [dangerzone#321](https://github.com/freedomofpress/dangerzone/issues/321) to track our visual testing needs for our CI tests.
+- Leftovers: Send PR for OpenJDK, LibreOffice conversion warnings.
+
+Deeplow:
+- Reviewed hotfix branch branch that fixed #307 (UI did not start in fedora 37)
+- Merge #302 (add isolation providers)
+- Create issues for unintentially introduced / other discovered bugs bugs from #305
+  - #315 removal of java dependency lead to broken .xls files
+  - #316 some normal container output is being printed back to the host.
+  - tesseract (OCR scanning) is guessing image's DPIs even though we provide it via --dpi (will need investigation), but seems minor.
+- Final test and closing PR for showing exceptions raised during a document conversion  (#313)
+- open PR for supressing container output when it was not meant to be parsed (#326, which fixes #316)
+
+Discussion:
+- Enforce updating changelog when closing an issue.
+  * Preferably add a lint that checks if a commit closes an issue without updating the Changelog (duh).
+
+Action points:
+- Alex: Create an issue for converting a 1000 pages PDF, and adding it to our 0.4.1 milestone.
+- Alex: https://github.com/freedomofpress/dangerzone/issues/317
+- Deeplow: (test-driven) make pdfunite step dependant on num pages
+- Deeplow: https://github.com/freedomofpress/dangerzone/issues/318
+- Deeplow:  Container: Fails to calculate number of pages #325
+- Alex: Update #296 with the latest state of the PR, and what deeplow should do.
+- Alex: Create signed per-distro packages in apt-tools-prod (w/ test key)
+  * Current state is that we have signed packages, but not with a unique name per distro.
+- (from meeting) go through docs and see if there was any other missing characters due to java or anything else
+
 # Wednesday - 2023-01-25
 
 Alex:
