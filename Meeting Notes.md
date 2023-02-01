@@ -1,3 +1,27 @@
+# Wednesday - 2023-02-04
+
+Alex:
+- Sent a PR that fixes pdfinfo and OpenJDK issues.
+  * With this PR, the conversions should start working again.
+- Working on introducing proportional timeouts.
+
+Deeplow:
+- Updated branch based on changes by @AlexP in adding pyside6 support for mac/windows
+- Checking container code for non-doc dependent timeouts (they should depend on the doc's size)
+- side-tracked with investigating how some inter-vm stuff works (could be interesting from SD-DZ communication)
+- exit with code 1 when one doc failed to convert (dangerzone#329)
+- review dependencies fix (dangerzone #328)
+- investigate the multiple failures in the CI
+
+Discussion:
+  - Fixing our multiple CI versions
+    - convert-tests: unpin Poetry 1.2.2, and use --no-ansi flag.
+    - PySide2 on bookworm and fedora37 (where there is python 3.11) - get from debian sources to it actually supports - HACK use a git repo to get salsa.debian.org PySide2 version
+
+Action Points:
+- Alex: Press pause on timeout PR, review the infra PR
+- Deeplow: Write a failing test for timeout and look for large pool of documents
+
 # Monday - 2023-01-30
 
 Alex:
