@@ -1,4 +1,37 @@
-# Wednesday - 2023-02-04
+# Monday - 2023-02-06
+
+Alex:
+- Sent a PR for proportional timeouts.
+  * Contains a commit that allows users to tweak the timeout value. Can be dropped if we don't like it.
+- Looked into the building PySide2 from the Debian repos.
+  * Not fun, we may have to create wheels and bundle them with our project.
+  * At this point, one has to ask if it's better using PySide6 wheels for development, and PySide2 packages only for user environments.
+
+Deeplow:
+- look into why certain deps are failing
+- look into adding PySide2 as dependency from source
+- briefly taking a look at the PR for fixing timeouts (didn't test it yet)
+- looking into testing a large document set a logging outputs to discover timeouts
+- fix various things found while converting those documents
+- made taiscale work in Qubes (installed only on appVM)
+
+Discussion:
+- Along with cleaning tmp dirs ([dangerzone#317](https://github.com/freedomofpress/dangerzone/issues/317)), should we also copy the input file to a temp dir (effectively what we do in https://github.com/freedomofpress/dangerzone/pull/248), so that we help users mount in the Dangerzone container any file that they can read?
+- We'll be using PySide6 exclusively in the development environment but when shipping to linux distros, we'll use PySide2. It will be tested anyways in QA before any relase. Context: https://github.com/freedomofpress/dangerzone/issues/330
+
+Action Points:
+  - Deeplow: finish reviewing of proportional timeouts PR (dangerzone#332)
+  - Deeplow: Continue work on large document tests
+  - Deeplow: open PRs for fixing issues during document set conversion tests
+  - Deeplow: add PR for running daily some document conversion tests
+  - Deeplow: go through my PRs and merge if approved and they pass the CI (dangerzone#332)
+  - Alex: Fix CI (PySide6)
+    * Work on top of the `2023-01-lint` branch.
+  - Alex: Review the PRs that deeplow has sent
+  - Alex: Work on temp dirs issue, and also create a temp dir for input files (so that we fix the various permissions denied issues)
+  - Alex: Ping Maeve for the Debian PR.
+
+# Wednesday - 2023-02-01
 
 Alex:
 - Sent a PR that fixes pdfinfo and OpenJDK issues.
