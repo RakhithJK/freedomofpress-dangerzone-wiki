@@ -1,3 +1,66 @@
+# Monday - 2023-02-13
+
+Deeplow:
+  - Finished reviewing of proportional timeouts PR (dangerzone#332)
+  - large test set - analysis of results sorting throug common error types
+
+Alex:
+- Sent a PR for our temp files issue (dangerzone#336)
+  * Also fixed a long standing issue wrt "permission denied" errors (dangerzone#335)
+- TODO: Wrap up Debian packaging PR, based on our team meeting.
+  * Do we need a .deb for each Debian distro?
+- TODO: Open PR on the LFS repo, that will provide 0.4.0 .debs (currently for  testing)
+- TODO: Reply to comments on my PRs.
+
+Discussion:
+- Qubes meeting preparation:
+  * Introduce Dangerzone:
+    - Based on TrustedPDF, which they can wrap their heads around. Where do we diverge though?
+      * OCR
+      * Batch conversion (with throttling)
+      * 2-step process: second step also happens in container for practical reasons.
+      * Multi-platform
+      * Multiple filetype support.
+      * Timeouts
+      * Progress reports
+      * Compresssion
+      * (not ideal) we print the attacker-controlled message to the UI.
+  * Question time: Given the above, if one were to piggy-back on the TrustedPDF architecture (dom1 <-> dom1 communication), would there be an issue? Would we be able to get progress reports? Would we be able to pass parameters for the conversion process?
+- Large dataset:
+  * We need to log the command output within the container (either failed or success cases). The reason is that some commands may complete successfully, but they may throw errors in their stderr, to indicate that the document is corrupted (think LibreOffice - Java issue).
+  * To do so, the container will prepend the logs with a special prefix, and the host will be able to handle it.
+  * To store these logs in files, the host must be in dangerzone deb mode, and the user needs to pass an environment variable to also enable command logging.
+  * If we are in a dangerzone dev mode -> we print those logs to stderr.
+  * If we also are instructed to write the logs in a file -> we also write these logs to a file.
+  * If we are not in a dangerzone dev mode -> log an invalid json error
+
+# Wednesday - 2023-02-08
+
+Alex:
+- Sent a PR for our CI issues.
+  * Merged the PR as well, and now our CI is green again.
+- Reviewed the PRs that deeplow sent.
+- Pinged Maeve for the Debian PR.
+  * Will reply to my comments soon.
+- Drafted a status report about the 0.4.1 milestone.
+
+Deeplow:
+  - preview DZ sanitization proposal (engineering#11)
+  - continue working on large test set
+
+Discussion:
+- large test test:
+  - always run with --ocr
+  - store expected output and result (pass/fail)
+  - if the expected result diverges from the expected
+  - consider increasing parallel number documents
+  - large test set discovery: we'll have it as a submodule with a pytest
+
+Action points:
+- Work on the temp dirs issue, and send a PR.
+- Nail down the last bits for the packages.freedom.press workflow.
+- Deeplow: document above action plan in https://github.com/freedomofpress/dangerzone/issues/334
+
 # Monday - 2023-02-06
 
 Alex:
