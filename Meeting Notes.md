@@ -1,3 +1,16 @@
+# Wednesday - 2023-02-15
+
+Alex:
+- Wrapped up Debian packaging PR (dangerzone#322)
+- Sent a PR with the resulting .debs to the apt-tools-prod repo
+- Stumbled into some .deb build issues on Ubuntu Focal.
+  - TODO: Send a PR for these issues.
+- Replied to open questions on several open PRs
+- TODO: Send fixes to my open PRs
+
+Deeplow:
+  - almost done with the testing
+
 # Monday - 2023-02-13
 
 Deeplow:
