@@ -1,3 +1,26 @@
+# Monday - 2023-02-20
+
+Deeplow:
+- feature-comparison with PDF Redact Tools (deprecated) add issue about documenting this
+- fix issue with macOS container generation PR
+- (final) review of "improve directory handling" PR (dangerzone#336)
+- basically done with work on large doc test
+  - make way of rebuilding the documents library and updating it
+  - run test over several thousand docs and analyse results for timeouts
+- merged arm64 docker image PR (dangerzone#337)
+- looking a bit more into International Journalism Conference about possible place to do user research
+- Write some initial notes about Dangerzone - SecureDrop integration in Qubes
+- TODO: review pending PRs
+
+Alex:
+- Sent a PR for build issues for Ubuntu Focal
+- Sent a PR for a PySide2 issue... in Ubuntu Focal
+- Sent a PR for replacing references to First Look Media in the code.
+- Merged some PRs that I sent (debian packaging PR for apt-tools-prod, temp dirs PR)
+- TODO: Test packages.freedom.press locally and send a PR with instructions for user and dev
+- TODO: By the might of Zeus, I **must** install Windows
+- TODO: Send a PR for yum-tools-prod
+
 # Wednesday - 2023-02-15
 
 Alex:
