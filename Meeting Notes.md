@@ -1,3 +1,32 @@
+# Tuesday - 2023-02-28
+
+Alex:
+- Finished QA testing on MacOS M1
+- Sent a PR for our recent CI breakage due to PEP 668 (dangerzone#351)
+- Started working on Qa for Ubuntu Kinetic.
+- TODO: Wrap up the Ubuntu Kinetic QA
+- TODO: Send some fixes on the release instructions
+- TODO: Produce a .deb that works on all Debian-based environments.
+- TODO: Reproduce some MacOS findings during QA.
+- TODO: Send a PR for the timeout issues
+
+Deeplow:
+- improve CI MSI building check (dangerzone#347)
+- 11K docs test - summarize test results (it took 20h45m ~ 8s/document)
+- run QA on windows and fedora 37
+- TODO: Fix the Choose folder bug on MacOS. (deeplow)
+- TODO: Wrap up the Fedora 37 QA (deeplow)
+- TODO: investigate why dangerzone description on windows is still wrong
+- TODO: dangerzone#352
+
+Discusssion:
+- Timeouts: We have seen that the .ppt file may timeout in our tests.
+  * Let's have a minimum timeout of 1 minute, and multiply the proportional timeout by x3
+- General todos:
+  * Changelog / Version bump
+  * Providing instructions for packages.freedom.press (Fedora)
+  * Update the website to provide different links for MacOS architectures.
+
 # Monday - 2023-02-20
 
 Deeplow:
