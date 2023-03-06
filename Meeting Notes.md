@@ -1,3 +1,36 @@
+# Monday - 2023-03-06
+
+Deeplow:
+  - Fix the Choose folder bug on MacOS.
+  - Wrap up the Fedora 37 QA
+  - "investigate why dangerzone description on windows is still wrong" - in the end it was correct, but just not displayed by default (opened dangerzone#359)
+  - run large tests on 0.4.0 (dangerzone#352) - tests were running over the weekend and still haven't finished
+  - TODO: re-review dangerzone#353
+  - TODO: The tesseract library
+  - TODO: adapt website to have two mac downloads (platform-specific)
+  - TODO: prepare some release notes to toot about substantial facts (when doing the changelog Alex will give some user-noticeable changes)
+
+Alex:
+- Finished QA testing on Ubuntu Kinetic
+- Found an issue in our Debian packages, built from Ubuntu Focal.
+  * Basically the entrypoint is different across OS, due to the setuptools version.
+  * I've tested with a .deb produced by Debian Bookworm, and it seems to work cleanly across platforms
+- I tried to create a GitHub actions job that tests the above:
+  * Create a dev environment for Debian Bookworm, produce a .deb, create an end-user environment in all platforms, install the .deb there.
+  * I tried to do so using caching, but it seems that the cache gets busted when building more than one Docker image. We don't exceed the 10GiB limit, so this is very weird.
+  * TODO: Create a GitHub actions job regardless, even with no caching involved, to help cementing our hypothesis that .debs produced by Debian Bookworm can be used in all of our Debian-based distros.
+- Sent an update for dangerzone#353, since the new Poetry installation methods failed on Ubuntu Focal and Debian Bullseye.
+- Sent a PR for bumping our timeouts (dangerzone#363)
+- TODO: (leftover): Send some fixes for the release instructions.
+- TODO: Review dangerzone#{356,361}
+- TODO: Send a PR for Fedora instructions, same as we did for the Debian one.
+- TODO: Finalize the Debian instructions PR
+- TODO: Create a lint for changelogs
+
+Discussion:
+- The tesseract library no longer outputs a message for calculating the size of the page.
+  * Why does it do that though? Have we changed something? We need to investigate.
+
 # Tuesday - 2023-02-28
 
 Alex:
