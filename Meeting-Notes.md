@@ -1,3 +1,16 @@
+# Wednesday 2023-03-09
+
+Agenda:
+- Agree on must-do remaining tasks prior to release
+- Identify any stretch goals if we have time due to release infrastructure readiness delays
+    - Use the `stretch goal` label for these issues 
+
+Action items:
+- (TK)
+
+Notes:
+- (TK)
+
 # Monday - 2023-03-06
 
 Deeplow:
