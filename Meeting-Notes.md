@@ -18,7 +18,7 @@ Alex:
 - TODO: Find the root cause for the tesseract dealy on 0.4.0.
 - TODO: Understand why a specific document fails to convert.
 
-# Wednesday 2023-03-09
+# Thursday 2023-03-09
 
 Agenda:
 - Agree on must-do remaining tasks prior to release
