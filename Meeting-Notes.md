@@ -1,9 +1,29 @@
+# Monday - 2023-03-13
+
+Deeplow:
+- merge: Fix "Choose..." button not opening dir selection dialog on Qt6 (#361)
+- final PR review and approval of poetry PEP 668 compliance (#353) (latest poetry CI breakage)
+- review all other pending PRs
+- revisit 0.4.0 large tests (and fix issue causing wrong result)
+- propose changes to changelog (dangerzone#366)
+- Investigate tesseract library not reporting issues on 0.4.1 but reporting them on 0.4.0: turns out 0.4.1 reporting was not being applied to second container whereas in 0.4.0 branch it was
+- Adapt website to have two mac downloads (platform-specific) - dangerzone.rocks#10
+- create PR for large_doc_set + CI for running daily on subset
+
+Alex:
+- Merged most of the pending PRs
+- Sent a PR for our changelogs, and a PR for fixing a minor issue when building a container image.
+- Started looking on performance comparison between 0.4.0 and 0.4.1.
+- TODO: Create a spreadsheet with the results
+- TODO: Find the root cause for the tesseract dealy on 0.4.0.
+- TODO: Understand why a specific document fails to convert.
+
 # Wednesday 2023-03-09
 
 Agenda:
 - Agree on must-do remaining tasks prior to release
 - Identify any stretch goals if we have time due to release infrastructure readiness delays
-    - Use the `stretch goal` label for these issues 
+    - Use the `stretch goal` label for these issues
 
 Action items:
 - (TK)
