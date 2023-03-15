@@ -1,3 +1,47 @@
+# Wenesday - 2023-03-15
+
+Alex:
+- Worked on finding the root cause for the faster OCR performance on 0.4.1, compared to 0.4.0.
+  * Trigger: During our benchmarks, we could reproducibly demostrate that the OCR step was significantly faster on 0.4.1. The problem here is that we hadn't changed something in this particular step for 0.4.1.
+  * Test subject: https://workstation.securedrop.org/en/stable/SecureDropWorkstation.pdf
+  * Times for converting the above document:
+    - 0.4.0 - No OCR : 52s
+    - 0.4.0 - With OCR: 250s
+    - 0.4.0 - Just OCR: **198s**
+    - 0.4.1 - No OCR: 20s
+    - 0.4.1 - With OCR: 177s
+    - 0.4.1 - Just OCR: **157s**
+  * Hypotheses:
+    1. The image size (RGB file) is different between 0.4.0 and 0.4.1, due to `pdftoppm`.
+       This hypothesis is **wrong**, since the image width and height are the same (1275x1651) in both versions. Given that RGB is a raw image format (i.e., with no compression), the image size should be the same.
+    2. Another comamnd (probably `gm`) is the one to blame for this difference.
+       This hypothesis is **wrong**. I verified by timing the runtime of each command in the container that `tesseract` is responsible for the 198s vs 157s difference.
+    3. OCR does not work / do a good job on 0.4.1.
+       This hypothesis is **wrong**. The image quality of the resulting PDF and the character detection seem to work the same in 0.4.0 and 0.4.1, at least on some random samples I chose.
+    4. The RGB file produced by `pdftoppm` is more "readable".
+       This hypothesis **may be** correct. While the RGB files have the same size, I saw that the PNG files, as produced by the RGB files, differ in size. In general, the 0.4.1 PNGs were slightly bigger in size, which **could mean** that the original files contain more info and are thus harder to compress.
+    5. In 0.4.1 we also installed poppler-data, a package with additional fonts. It could be that tesseract-ocr was trained on these sets and thus it scans them faster.
+  * Conclusion: Whatever the underlying reason for this performance speed-up, may understanding is that it seems to be benign and it shouldn't worry us.
+- Discovered an issue with our MIME types. We don't handle `application/zip` and `application/octet-stream`, meaning that we ignore some perfectly valid files (dangerzone#369).
+- TODO: Create a spreadsheet with our benchmark results.
+- TODO: Send a fix for the MIME type issue
+
+Deeplow:
+- continue CI 200 doc short test
+  - run into issues with git-lfs in CI "bad credentials" appears to be a bug in git-lfs
+  - move on test on github CI
+  - running into issues with "permission denied" when creating files in home folder of CI
+
+Discussion:
+- Insights from the benchmarks:
+  * No regressions for now
+  * The OCR speed up seems to be benign for now
+  * 1.5x speed up for small files and 4x speed up for files with lots of pages (OCR enabled)
+  * 4% less failures due to PDFtk
+  * both versions fail on ~380 documents due to unsupported format ([dangerzone#369](https://github.com/freedomofpress/dangerzone/issues/369))
+  * analysis limitation: we didn't do visual diffing on PDFs to see if there were rendering issues (appart from the occasional manual inspection)
+  * analysis limitation: We ran the tests on bare metal, so timeouts will be less rare than in Windows/MacOS VMs.
+
 # Monday - 2023-03-13
 
 Deeplow:
@@ -15,7 +59,7 @@ Alex:
 - Sent a PR for our changelogs, and a PR for fixing a minor issue when building a container image.
 - Started looking on performance comparison between 0.4.0 and 0.4.1.
 - TODO: Create a spreadsheet with the results
-- TODO: Find the root cause for the tesseract dealy on 0.4.0.
+- TODO: Find the root cause for the tesseract delay on 0.4.0.
 - TODO: Understand why a specific document fails to convert.
 
 # Thursday 2023-03-09
