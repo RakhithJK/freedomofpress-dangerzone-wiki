@@ -26,10 +26,49 @@ Agenda:
     - Use the `stretch goal` label for these issues
 
 Action items:
-- (TK)
+- (deeplow/Alex) Create a spreadsheet or doc with results from different team test runs and share with the group (we'll potentially share these results publicly in a post)
+- (deeplow) Run same tests against 11,000 docs for Alex to include in the spreadsheet
+- (Alex) Find out the root cause for the OCR delays on 0.4.0.
+- (Alex) Try to understand why a certain document that can be rendered properly still fails on Dangerzone (stretch goal)
+- (Maeve) Add logic to verify signature for RPM releases (see https://github.com/freedomofpress/yum-tools-prod/blob/main/scripts/publish.py#L29 and https://github.com/freedomofpress/securedrop-yum-prod/blob/main/.circleci/config.yml)
+- (Erik) Check in with Riley on Windows infrastructure
 
 Notes:
-- (TK)
+- update on speed difference from 0.4.0
+
+    - seeing inconsistent results around performance between 0.4.0 and 0.4.1
+
+    - how we are splitting pdfs into mutliple images might have something to do with it
+
+    - without ocr, 0.4.1 is faster
+
+    - with ocr, 0.4.1 is even faster
+
+    0.4.0 on [X platform/hardware] with [Y features] on [Z dataset]: performance  / error rate
+
+    0.4.1 on [X platform/hardware] with [Y features] on [Z dataset]: performance  / error rate
+
+    - deeplow's run:
+
+      * 0.4.0 on Fedora 37 with OCR disabled on 200 docs: 823s
+
+      * 0.4.1 on Fedora 37 with OCR disabled on 200 docs: 595s (x1.4 speedup)
+
+      * 0.4.0 on Fedora 37 with OCR enabled (eng) on 200 docs: 3098s
+
+      * 0.4.1 on Fedora 37 with OCR enabled (eng) on 200 docs: 1281s (x2.4 speedup)
+
+    - Alex's run:
+
+      * 0.4.0 on Ubuntu Focal with OCR disabled on 200 docs: 759s
+
+      * 0.4.1 on Ubuntu Focal with OCR disabled on 200 docs: 478s (x1.6 speedup)
+
+      * 0.4.0 on Ubuntu Focal with OCR enabled (eng) on 200 docs: <took several hours, lots of timeouts, CPU thermal throttling is suspect)
+
+      * 0.4.1 on Ubuntu Focal with OCR enabled (eng) on 200 docs: 1218s
+
+    - All tests, except were noted, fail on ~50 docs, with "The document format is not supported" on *both* versions.
 
 # Monday - 2023-03-06
 
