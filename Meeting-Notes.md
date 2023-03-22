@@ -1,4 +1,59 @@
-# Wenesday - 2023-03-15
+# Wednesday - 2023-03-22
+
+Alex:
+- Configured a new Dangerzone environment on a Windows VM
+- Worked a bit on [dangerzone#153](https://github.com/freedomofpress/dangerzone/issues/153).
+    * Found out that it only affects 32-bit versions of OnionShare, so that's a different story.
+- TODO: Resolve dangerzone#153
+- TODO: Fix the MIME type issue
+
+Deeplow:
+- Create github action for SSH debugging github actions via onion service
+- merge languages removal PR
+- provide feedback on "Dangerzone; beyond tools" doc, which evaluates the feasibility of expanding Dangeronze
+- debugging issue ssh connection to github actions
+- TODO: research if there is a way to mark repo as deprecated
+- TODO: do a PR for running the bulk tests locally (without the GH actions part)
+
+Discussion:
+- 0.4.1 announcement on PackageCloud:
+    * Took a look at differential updates, Debian/Fedora don't seem to support it.
+    * Maybe research if there's a way to deprecate an APT/YUM repo.
+    * We will handle the removal of the PackageCloud in the installation instructions for packages.freedom.press, as a note for people coming from Dangerzone 0.4.0.
+    * Alert box on Dangerzone start. no post install script because we want to promt the user about updating repos
+    * Check if we can do "automated" button which will prompt users for their sudo pass and update the repos
+    * Our 0.4.1 release will be both on PackageCloud (last time) and on packages.freedom.press.
+- Large test update
+    * Maybe reprioritize it after the 0.4.1 work, just for local development.
+- Onionshare issue
+  * it only affects 32-bit windows
+  * Related issue: https://github.com/onionshare/onionshare/issues/1557
+
+# Monday - 2023-03-20
+
+Deeplow:
+- created https://github.com/deeplow/action-ssh-onion-service to ssh into github actions runners
+- found strategy to make have dangerzone run on github actions but feels hacky and creates other problems. Needs more research (probably Alex can tackle this one better).
+- TODO: ping Erik about posting on mastodon about how Dangerzone could have protected against google pixel redaction failures
+- TODO: warn packagecloud users
+   - change repo is possible?
+   - if not possible
+
+Alex:
+- Basically merged the vast majority of the open PRs.
+- Did some research on how Dangerzone can sanitize other multimedia types
+- Helped a bit with benchmarking and GitHub actions stuff.
+- TODO: Send a fix for the MIME type issue
+- TODO: Open an issue for running Dangerzone as a user other than 1000.
+
+Discussions:
+- Github actions runner. Creating this is not straightfoward due to some key differences:
+  - CI user called runniner and with `uid=1001` instead of `uid=1000`. Our `env.py` (which creates a container to run Dangerzone on) isn't preparef for that.
+  - Because of this, podman in the env fails to run due to insufficient permissions (running as user but ~/.local/share/containers is owned by docker)
+  - They also have another user calledunneradmin
+  - Let's deprioritize this task?
+
+# Wednesday - 2023-03-15
 
 Alex:
 - Worked on finding the root cause for the faster OCR performance on 0.4.1, compared to 0.4.0.
