@@ -1,3 +1,27 @@
+# Monday - 2023-03-23
+
+Agenda:
+
+- release check-in
+
+    - Creds for infrastructure have been disseminated
+
+    - poetry update has broken a package - Alex will open issue
+
+    - OpenSUSE 502 errors
+
+    - Onionshare/Dangerzone installation issue only affects users runing old binaries: https://github.com/freedomofpress/dangerzone/issues/153#issuecomment-1479354403
+
+    - Discussion with Micah to come regarding packagecloud / potentially breaking migration to packages.freedom.press which would require manual user intervention
+
+    - Reconvene on Tuesday next week for another release check-in (look out for meeting invite)
+
+- early discussion about Qubes PoC and some post-0.4.1 planning on that
+
+
+    - Action: Ro to share some experiences and findings with Alex, deeplow & Allie (optional)
+- (if we have time) a bit of light brainstorming about future DZ capabilities.
+
 # Wednesday - 2023-03-22
 
 Alex:
