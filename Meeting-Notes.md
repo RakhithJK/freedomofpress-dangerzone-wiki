@@ -1,4 +1,34 @@
-# Monday - 2023-03-23
+# Monday - 2023-03-27
+
+Deeplow:
+  - review 0.4.1 changelog update PR
+  - brief look at mime type issue and propose solution (dangerzone#369)
+  - internal demo of Qubes integration PoC (Dangerzone-Qubes-trusted-PDF-hybrid)
+  - final work on large tests (local testing only)
+  - short dive into how the Wikimedia software handles PDF security - create GH wiki page about "similar projects"
+  - TODO: look into the mime types
+  - TODO: Commence the QA (again!)
+
+Alex:
+- Got nerdsniped with Tailscale, debugged some issue for a little while
+- TODO: Fix Poetry / CI issues
+- TODO: Send a quick fix for MIME type support.
+- TODO: Commence the QA (again!)
+
+Discussion:
+- QA 0.4.1:
+    * Alex: Windows, MacOS M1, Fedora 37, Build .deb
+    * Deeplow: MacOS Intel, Ubuntu 22.10, Build 2 .rpms
+- Release candidates:
+    * Remove PackageCloud logic for tags.
+    * Create a `release-0.4.1` branch
+    * Merge any PRs there that *must* go in 0.4.1
+    * We can merge PRs on the main branch if we *don't* want them in 0.4.1
+    * Tag the first commit of `release-0.4.1` as `v0.4.1-rc1`
+    * Do the QA.
+    * Once we tag the final commit as `v0.4.1`, then we merge `release-0.4.1` to the `main` branch.
+
+# Thursday - 2023-03-23
 
 Agenda:
 
