@@ -1,3 +1,30 @@
+# Wednesday - 2023-03-29
+
+Deeplow:
+  - follow up on libreoffice mime type issues
+  - started QA on RC2
+  - TODO: open issue about making libreoffice security level to max
+  - TODO: open issue about about pipefail (see discussion)
+  - TODO: update macOS signing key ID in code and same for Window
+
+Alex:
+- Fix Poetry CI issue
+- Merged the Changelog PR for the Keep a Changelog format
+- Fixed incomlete MIME type support for some files.
+- Looked into running NoMachine securely on Linux
+- Started the QA on Windows and Ubuntu 22.10
+  * I should have started it in Fedora 37 :-|
+- TODO: Update Debian PR with the new FPF keys
+- TODO: Send a PR for Fedora instructions.
+- TODO: Check out GitHub deployment keys for apt-tools-prod / yum-tools-prod
+
+Discussion:
+  - QA issues:
+    * set -o pipefail for bash scripts (see podman save | grep situation).
+    * Dangerzone shows an empty image when image load fails -> creeate an issue for that.
+    * Bump version to 0.4.1-rc2 in pyproject.toml and share/version.txt
+  - In the future, setup LibreOffice security level to Very High.
+
 # Monday - 2023-03-27
 
 Deeplow:
