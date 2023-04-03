@@ -1,3 +1,12 @@
+# Monday - 2023-04-03
+
+Deeplow:
+  - release procedure preparation
+
+Alex:
+- QA and release preparation
+- Check some Windows performance issues between GUI and CLI
+
 # Wednesday - 2023-03-29
 
 Deeplow:
