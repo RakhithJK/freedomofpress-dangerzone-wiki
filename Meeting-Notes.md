@@ -1,3 +1,26 @@
+# Wednesday - 2023-04-26
+
+Alex:
+  - We released 0.4.1!
+  - TODO: Send a PR for Grype code scanning and close #222 (release-0.4.1-grype)
+  - TODO: Send a PR for CI of Debian-based debs (ci-debs)
+  - TODO: Fix Debian Bullseye CI (https://github.com/freedomofpress/dangerzone/issues/388)
+  - TODO: Clean up stale branches
+  - TODO: Write down configuration notes for MacOS (homebrew fork of reprepro, multi-user Homebrew/Python, run Docker without sudo)
+  - TODO: Prepare for release retro
+  - TODO: Handle architecture options for Debian packages (https://github.com/freedomofpress/dangerzone/issues/394)
+  - TODO: Nuke the PackageCloud repo after #323 is resolved
+  - TODO: See improvements for yum-tools-prods CI checks (sig checking for unsigned packages, repo configuration for new distros)
+
+deeplow:
+  - add fingerprint to website (https://github.com/freedomofpress/dangerzone.rocks/pull/12)
+  - make protocol for rotating keys, listing places where key need to be updated (mastodon, website)
+  - investigate potential integration complexity of Dangerzone into OCCRP's Aleph
+  - TODO: write a list of branches to protect
+  - TODO: Add GPG signing key in Mastodon account
+  - TODO: performance increase toot: You should expect this last Dangerzone release (0.4.1) to be faster overall on larger documents, especially on apple silicon chips (M1, M2), which now runs natively.
+  - TODO: resolve https://github.com/freedomofpress/dangerzone/issues/323
+
 # Monday - 2023-04-03
 
 Deeplow:
