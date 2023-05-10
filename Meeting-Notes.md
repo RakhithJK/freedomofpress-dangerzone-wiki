@@ -1,3 +1,64 @@
+# Monday - 2023-05-08
+
+Alex:
+- Sent the PR for the security scanning of our images (#405)
+- Sent the PR for building our Debian package and installing it in every Debian-based flavor (#406)
+- Sent a PR in yum-tools-prod to fix sig checking for RPM packages.
+- Remaining:
+  * Debian Bullseye CI
+  * Write down notes from the 0.4.1 release.
+  * Clean up stale branches.
+  * Review open PRs
+- Dataharvest: Pitch Dangerzone!
+
+Discussion:
+- Juggling priorities:
+    - O.4.1 milestone: We should close it once we review the PR for the large tests. Actually this issue might be a collection of other issues (0.4.0 - 0.4.1 comparison, testing Dangerzone against large dataset, storing performance results per release). We'll make this clearer once we review the PR. For now, we will move this to the 0.5.0 milestone
+    - IJF results analysis and User Stories development
+      * We need to develop user stories based on user interviews.
+      * Figure out lessons learned, convert those to User Stories
+      * From User Stories, we will have actionable items.
+    - Qubes integration Proof of Concept
+      * alex: Install QubesOS and have a quick tour (end of week goal)
+      * Current Qubes PoC: write down instructions, somehow make it mergeable.
+      * Future steps: Create issues for missing functionality, add those in 0.5.0
+    - Open PRs
+    - TBD: 0.5.0 priorities
+    - Dataharvest: Share presentation, pitch tool.
+
+Deeplow:
+- curate IJF data
+- coordinating IJF insights analysis for this week
+
+# Wednesday - 2023-05-03
+
+Deeplow:
+- GPG signing key in Mastodon account
+- IJF interviews analysis
+- sync meeting about IJF interviews
+- write a list of branches to protect
+
+Alex:
+- Continued on the security scanning front.
+
+Discussion:
+- https://github.com/freedomofpress/dangerzone/issues/323
+  - branches to protect
+    - 397-f38 :: PR #399
+    - 334-large-test :: PR #386
+    - 221-user-ns :: PR #248
+    - wip-gvisor ::
+    - qubes-build-inst ::
+    - release-0.4.1-grype ::
+    - 334-large-test-gh-actions ::
+    - qubes-integration-poc ::
+  - for Alex to check:
+    - qa-windows
+    - ci-debs
+    - ci-wheel-validation
+    - 334-large-test-ssh
+    - 352-0.4.0-large-tests
+
 # Wednesday - 2023-04-26
 
 Alex:
