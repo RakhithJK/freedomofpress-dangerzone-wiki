@@ -1,3 +1,19 @@
+# Wednesday - 2023-05-10
+
+Alex:
+- Set up Qubes for experimentation
+- TODO: Follow-up on IJF findings
+- TODO: Run Dangerzone PoC on Qubes
+
+Deeplow:
+- review security scanning PR (https://github.com/freedomofpress/dangerzone/pull/405)
+- Open discussion around OCR
+- Rethink the need to have status messages (in fact we don't), which will make the Qubes integration easier
+- reading up on UX user stories in prep for discussion
+- prep Q meeting for DZ update
+- present Qubes (minimal) PoC
+- idea about potential signal service
+
 # Monday - 2023-05-08
 
 Alex:
