@@ -1,3 +1,26 @@
+# Monday - 2023-05-15
+
+Deeplow:
+- prune branches
+
+Alex:
+- Ran Dangerzone PoC on Qubes
+- Followed up on some PRs
+
+Discussion:
+- Qubes OS:
+    * Alpha: Provide a rudimentary integration with Qubes OS. E.g., may not have GUI, or other important (but not security-critical) features, but the core functionality is there.
+      - assumption: main qube and disp qube are based on the same template
+      - have a qubes isolation provider
+      - set the proper isolation provider in Qubes (containers in most platforms, dispVMs in Qubes)
+      - figure out if licensing affects the use of Qubes APIs
+      - no code in dom0, install can include instructions for dom0
+    * Beta: Improve the integration with QubesOS. E.g., add GUI support and other important features, make the installation easier.
+    * Stable: Finalize the integration with QubesOS. There should be feature parity in all platforms, and installation on QubesOS must be as easy as possible.
+    * Integration Testing
+    * SecureDrop integration
+      - assumption: main qube and disp qube are based on the same template
+
 # Wednesday - 2023-05-10
 
 Alex:
