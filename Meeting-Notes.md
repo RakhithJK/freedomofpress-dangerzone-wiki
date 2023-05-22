@@ -1,3 +1,31 @@
+# Monday - 2023-05-22
+
+deeplow:
+- investigate OCR language issues that blocked CI and opedned PR #418
+- merge contributor's typo patch #416
+- reviewed open PRs from Alex
+- finish first stage of Qubes PoC
+- drafting installation instructions / packaging stuff for Qubes PoC
+
+Alex:
+- Proposed a fix for some Tesseract issues.
+- Fixed a racy test for Debian Bullseye
+
+Discussion:
+- Qubes PoC next stages
+- How do we homegenize the code
+  - container/dangerzone.py will be split in two:
+    - dangerzone/conversion/pdf_to_pixels.py:convert
+    - dangerzone/conversion/pixels_to_pdf.py:convert
+  - Move Dockerfile to the root directory.
+    * Make our container image build scripts use the dangerzone/ dir as the build context.
+- Move the design document to the wiki
+- Tesseract:
+  * Add a test for checking if the trained data match our language list
+  * Consider adding a safeguard for making languages not selectable if the trained data do not exist.
+- Debian Bullseye: Polish the PR.
+- Create user stories as GitHub issues
+
 # Wednesday - 2023-05-17
 
 Alex:
