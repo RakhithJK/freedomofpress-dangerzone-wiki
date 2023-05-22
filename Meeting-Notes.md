@@ -1,3 +1,21 @@
+# Wednesday - 2023-05-17
+
+Alex:
+- First draft of the Qubes integration design document
+- Created some issues for the Qubes integration
+- Merged Fedora 38 support
+- Update security scanning PR
+- Sent a PR for a CSS issue on dangerzone.rocks
+
+Deeplow:
+- development of Qubes integration
+
+Discussion:
+- Binary protocol: should we use asyncio? If we go full asyncio, we may need to greenify Qt as well. It may be worth making only the conversion async, and the rest of the code sync. Python has the ability to run async functions on a specific thread, and wait for it.
+- qrexec: Can we use the Python API instead of the executable?
+- we'll need the user to create a diposable template for dangerzone. Otherwise they'll use the fedora-37-dvm, which is networked. We can check the networking of the dispVM on the first start just as a santity check to make sure the user didn't shoot themselves in the foot
+- ultimately we should streaming integration with Docker as it would make the user IDs easier to handle, which has caused us problems in the past. This won't be a concern for now.
+
 # Monday - 2023-05-15
 
 Deeplow:
