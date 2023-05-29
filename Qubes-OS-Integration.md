@@ -91,7 +91,7 @@ On the other hand, we also need to add dependencies to our packages that were pr
 
 Also, we need to create two packages for Qubes; one for Fedora 37 templates, and one for Debian 11 templates. Qubes-specific packages can be named `dangerzone-qubes-*`, and they should conflict with the regular Dangerzone packages for Fedora 37 and Debian 11.  
   
-Finally, there may be use cases where users have different qube templates for disposable qubes and app qubes. These users may want to install the “client” dependencies of Dangerzone on the app qube template, and the “server” dependencies of Dangerzone (e.g., LibreOffice) in a separate disposable qube, to reduce the attack surface of their app qubes. If such a use case comes up, we’ll need to break the packages packages we mentioned above in two parts (`dangerzone-qubes-client-*` / `dangerzone-qubes-server-\*`).
+Finally, there may be use cases where users have different qube templates for disposable qubes and app qubes. These users may want to install the “client” dependencies of Dangerzone on the app qube template, and the “server” dependencies of Dangerzone (e.g., LibreOffice) in a separate disposable qube, to reduce the attack surface of their app qubes. If such a use case comes up, we’ll need to break the packages packages we mentioned above in two parts (`dangerzone-qubes-client-*` / `dangerzone-qubes-server-*`).
 
 
 ### Qubes RPC Policy
