@@ -1,3 +1,93 @@
+# Monday - 2023-06-12
+
+deeplow:
+- opened PR for Qubes ([#437](https://github.com/freedomofpress/dangerzone/pull/437))
+- working on "add change docs selection button" issue ([#428](https://github.com/freedomofpress/dangerzone/issues/428))
+- migrated user stories to github. Hopefully, this can be made public soon.
+- TODO: finish "change docs" PR
+- TODO: investigate updating
+
+Alex:
+- Sent review note for Qubes PR
+- TODO: Reply to deeplow's comments on Qubes OS
+- TODO: Quick review comments for huge doc tests
+
+# Wednesday - 2023-06-07
+
+Alex:
+- Updated the code for the server-side conversion of Qubes
+- Fixed a CI race for Debian Bullseye
+- Ignored a CVE in our security scanner that does not apply to us
+
+deeplow:
+- review "ci: Fix CI races in Debian Bullseye tests" #435
+- organize some notes on admin API
+- work on Add "Change selection" button near "x document(s) selected"dangerzone#428
+- TODO: open PR for qubes-poc and review each other
+
+# Monday - 2023-06-05
+
+Alex:
+- Presented Dangerzone at Dataharvest to ~20 people. Went pretty smooth and got interesting feedback.
+- Finished the review of the Qubes integration PoC branch. Will share the review comments soon.
+- TODO: Check out comments on asyncio in the server-side wrapper.
+- TODO: Send comments for Qubes integration PoC
+
+deeplow:
+- reviewed Qubes Admin API
+- Add "Change selection" button near "x document(s) selected"dangerzone#428
+- TODO: Send PR for selection, once Alex comments on asyncio
+
+# Wednesday - 2023-05-31
+
+deeplow:
+- Looking into Qubes Admin API for dangerzone distribution methods
+- review https://github.com/freedomofpress/dangerzone.rocks/pull/16
+- move Qubes design doc to the github wiki
+- add user story for security slider
+- Open Dangerzone-Qubes issues:
+- Progress reporting
+- Timeouts
+- Exception handling + hardening
+- packaging (OCR + libreoffice + ...)
+- TODO: document / post summarizing Qubes API findings and limitations
+- TODO: start taking a look at the UX issues
+- TODO: talk about potential need to split container.convert() into 2 stages (for file preview)
+
+Alex:
+- Fixed a minor Qubes issue wrt Python's bindings for libmagic.
+- TODO: Finalize the Dataharvest presentation
+- TODO: Review the Qubes integration POC branch
+
+# Monday - 2023-05-29
+
+Deeplow:
+* polish most of the dangerzone Qubes integration (still not done yet)
+* work on user stories and creation of multiple issues following that work
+
+Alex:
+* Worked on the presentation for Dataharvest 2023
+* Merged the PRs that fix our CI tests
+* Weighed in on some GitHub issues for post-IJF user stories
+* Debugged an issue with `py3-magic` in Fedora environments.
+* TODO: Work on the server-side integration for Qubes.
+  - Fix the Python magic issue
+  - Merge dz.Convert with the dangerzone wrapper code.
+  - Make sure that asyncio works on the server-side conversion.
+
+Discussion:
+- large doc tests on Qubes (https://github.com/freedomofpress/dangerzone/pull/386/)
+  - we have to somehow change the logic to accommodate the fact that we stream pages and there's no space fo sending json data inbetween
+  - we can probably just send the data at the end of the conversion as json. The client ignores this if not in debug mode
+
+# Wednesday - 2023-05-24
+
+Deeplow:
+    - Review pending pull requests
+    - continue work on Qubes PoC
+    - Go through user research once again and map it to user stories
+    - Idea: restricted web service - having a Dangerzone web service without file upload (only select doc from URL). This mitigates the somehow risk of having people upload sensitive documents https://github.com/freedomofpress/dangerzone/issues/110#issuecomment-1560534886
+
 # Monday - 2023-05-22
 
 deeplow:
