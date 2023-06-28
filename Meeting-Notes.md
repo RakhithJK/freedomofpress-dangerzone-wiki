@@ -1,3 +1,96 @@
+# Wednesday - 2023-06-28
+
+Deeplow
+  - Review scope of UXD work
+  - Open PRs for 2 new platforms (Debian Trixie and Ubuntu Lunar)
+  - Start work on falling back to using containers on Qubes by default (we don't want any Qubes users expecting it to use containers to be surprised) #451
+  - Catch up on contributor's PR for supporting Hancom Office files (see #460)
+  - check if containers isolation works in Qubes
+
+Alex:
+* Reviewed PRs for Debian Trixie and Ubuntu Lunar
+* Reviewed and merged PR for reducing container image size by a first-time contributor (thanks!) (see #459)
+* Started reviewing a PR for Hancom file support (see #460)
+* Started working on the update notifications issue (see #189)
+* TODO: Check Hancom issue with Libreoffice
+
+Discussion:
+  - hancom office files support
+    * Security consideration: Do not pre-load this extension for every filetype.
+    * Size consideration: Fonts take ~90 MiBs of space, probably bitmap, might be worth checking ttf
+    * (optional) Security consideration: Have an "experimental" flag for Hancom files.
+
+# Monday - 2023-06-26
+
+deeplow:
+    - rebase progress reports PR (#450)
+    - finishing up rebasing large docs test on top so it works on Qubes (plus many improvements)
+    - TODO wrap up bulk doc test (#386)
+    - TODO (?) improve GUI test coverage (make QA easier)
+
+Alex:
+- We merged alpha Qubes integration!
+- Prepared an internal presentation for the above item.
+- Added a plan for update notifications (dangerzone#189)
+- Started working on a plan for the 0.4.2 milestone.
+
+Discussion:
+- Leftovers for Qubes integration presentation
+- Set dates and work items for 0.4.2
+- UX for notification updates:
+  * No need to terminate the updater thread (if it's running in the background) when the user unclicks "Check for updates"
+  * Threshold for update checks can be 12 hours
+  * We can add a setting icon (hamburger/gear) in the top right corner, that can be always visible.
+    - We will follow the Tor Browser notification model.
+    - This icon will have a notification bubble in case of a new update or error.
+    - Clicking on this icon will open a dropdown menu.
+    - This menu will have the following items:
+      * "Check for updates" with a slider (on/off)
+      * "Update available" / "Update error", accompanied by a green/red notification bubble.
+        -  Clicking on this menu entry will open a pop-up with info.
+
+# Wednesday - 2023-06-21
+
+deeplow:
+    - TODO record dangerzone-qubes demo video
+    - TODO give feedback on presentation
+    - TODO continue bulk doc test (based on Qubes PoC PR)
+
+Alex:
+- Wrapped up the final branch for the Qubes PoC
+  * Mainly made the Git history more sensible.
+- TODO: Work on the Qubes presentation
+- TODO: Propose plan for 0.4.2 or 0.5.0
+
+Discussion:
+    - capturing all output for debug purposes
+      - send all _relevant_ data via stdout (pixels)
+      - send all debug info via sterr. Currently captured only on development. In the future add in cli qubes-similar --pass-io that shows sanitized attacker-controlled sterror so we can understand why a certain document failed. We'll cap this at a reasonable amount.
+      - in production for the moment, we'll be using exit codes to identify the step in which it failed
+
+# Monday - 2023-06-19
+
+Deeplow:
+  - investigate the tails situation following private user question
+  - Finish addressing Qubes PoC PR feedback
+  - TODO: Work on progress reports (#429)
+
+Alex:
+- Continued working on Qubes PoC.
+- TODO: Finalize the Qubes PoC branch
+- TODO: Scope the update notification feature (#189)
+- TODO: Create an issue for using containers by default on Qubes
+- TODO: Add support for Ubuntu Lunar (23.04) and for Debian Trixie (13)
+
+# Wednesday - 2023-06-14
+
+Alex:
+- Reviewed the Qubes PoC
+- Reviewed the large tests PR
+
+Deeplow:
+- address review comments for Qubes PoC
+
 # Monday - 2023-06-12
 
 deeplow:
