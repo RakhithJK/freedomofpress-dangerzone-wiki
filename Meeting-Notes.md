@@ -1,3 +1,56 @@
+# Monday - 2023-07-17
+
+Deeplow:
+    - ask: @apyrgio to comment on GPL situation https://github.com/freedomofpress/dangerzone/pull/460#issuecomment-1637200125
+    - review of on paper on PDF redaction relevant for advising on the use of DZ for post-redaction mitigation. https://petsymposium.org/2023/files/papers/issue3/popets-2023-0069.pdf
+  - address feedback in "DZ Update notification" PR (#466)
+  - follow up on HWP office issue (#460)
+  - open issue about adding CJK fonts
+  - prep machines for QA (found some issues)
+  - TODO: check HWP PR conflicts with the Qubes conversion (#460) and open issue for adding that
+  - address feedback large docs test PR (#386)
+
+Alex:
+- Reviewed some PRs for 0.4.2 (#467, #464, #450, #439, #386)
+- Still working on fixing some issues with the update notifications PR (#189), based on deeplow's review comments
+- Researched a bit what's the case (licensing-wise) with regards to H20Restart (GPL) and Dangerzone (MIT)
+- Took a look at our Homebrew situation, due to a user report (#470). Haven't found something breaking so far, but we're talking with the user to understand what's breaking in their side.
+- Merged a PR for SIP instructions (#401)
+
+Discussion:
+- Homebrew issues:
+- 0.4.2:
+  * Updater notifications PR:
+    - We need to store the error somewhere, instead of retrieving it from the settings. We can either store it in the QAction, or in the MainWindow.
+    - The tests for the updater settings have lots of updater logic (updater fixture for instance) so maybe we can keep them within the `test_updater.py` module.
+  * Enable container logging PR:
+      - Maybe it makes sense, in the server side, to grab the output from the commands verbatim, and then do any processing in the client side
+  * HWP support PR:
+    - Summarize the licensing situation and mention it's not a blocker.
+    - Check that in Qubes, missing HWP support is not a big issue (doc conversion will fail)
+
+# Monday - 2023-07-10
+
+Deeplow:
+    - Found issue leading to recusion in QT tests https://github.com/freedomofpress/dangerzone/actions/runs/5457217733/jobs/9930987271?pr=466
+    - reviewed https://github.com/freedomofpress/dangerzone/pull/466
+    - continued work on Hancom Office PR
+    - checking windows situation for QA (opened PR)
+    - TODO finish setting up manual QA system for windows
+
+Discussion:
+    - TODO book UX meeting
+    - QA and release: bump python and python deps for mac and windows (add to release procedure)
+
+# Monday - 2023-07-03
+
+Deeplow:
+    - review and propose a patch to hancom PR
+    - TODO: look at https://wiki.documentfoundation.org/Documentation/DevGuide/Extensions
+
+Alex:
+- Finalizing initial work on update notifications PR
+
 # Wednesday - 2023-06-28
 
 Deeplow
