@@ -1,3 +1,48 @@
+# Monday - 2023-07-24
+
+Alex:
+- Wrap up update notifications PR
+- Add extra GUI tests for full coverage
+- Bump Python dependencies
+- Remaining fixmes for updater notification PR:
+  * Detect Homebrew installations: we cannot detect that an application has been installed via Homebrew. Open an issue for this
+  * What if users click on X? TODO: I need to open a PR for this.
+- TODO: Update the update notifications PR with proper fixes for the CI tests.
+- TODO: Send the PR for the rest of the GUI tests
+- TODO: Send the PR for the new Python dependencies
+
+Deeplow:
+- TODO: strip out certain code from bulk doc conversion
+- TODO: https://github.com/freedomofpress/dangerzone/pull/464
+- TODO: hancom PR
+  - final look at the code
+  -  remove "without-extensions" files (duplicates) they are mounted
+
+Discussion:
+* Open threads for releasing 0.4.2:
+  - Container logging:
+    * Defer to after 0.4.2
+    * Qubes support required major revisions
+    * Reworked the training part of the testing
+    * TODO: Factor out the string sanitization logic from this PR. Sanitize the strings in `print_progress` in our current code. Pass it optionally through `repr()`.
+  - Updater PR:
+    * TODO: Add proper commit for fixing our CI tests (use `-g` instead of `offscreen`, remove pytest-wrapper)
+  - Change document selection:
+    * Rebase it on top of the main branch, once the updater PR gets merged. We expect that all tests will be green.
+  - Use containers in Qubes:
+    * Follow up on the review comments
+  - HWP PR:
+    * TODO: Remove the files without extensions
+
+# Wednesday - 2023-07-19
+
+Deeplow:
+  - caught up with over-the-weekend contributors comments
+  - continue work on large docs PR
+  - TODO do minor QT-related TODOs on "DZ Update notification" PR (#466)
+  - TODO feedback in other PRs
+  - TODO update
+
 # Monday - 2023-07-17
 
 Deeplow:
