@@ -1,3 +1,27 @@
+# Wednesday - 2023-07-26
+
+Alex:
+- Merged the update notifications PR (dangerzone#466)
+- Merged the PR that bumps our Python deps and allows us to run more than one Qt CI test (dangerzone#483)
+- Merged a user contribution for a long-standing warning (dangerzone#481)
+- Debugged lots of CI failures in the meantime, that are Qt-related (e.g., dangerzone#480)
+- TODO: Sunset Ubuntu Kinetic
+- TODO: Fix fonts in Fedora
+- TODO: Research on the flatpak situation
+- TODO: Add tests for sanitization logic (2023-07-santize-progress-update)
+- TODO: Open a Qt issue for PySide6
+- TODO: Send a PR to the extrepo devs
+- TODO: Convert https://github.com/apyrgio/homebrew-reprepro to actual PR
+
+deeplow:
+- rebase and fix CI issues with PR" Add "change document selection" button #439
+- Taking another look at the HWP PR to see what's missing
+- Rebuild broken dev environment (something podman related got broken)
+- review PR "Bump python dependencies" #483
+- TODO Look into flatpak situation
+- TODO Merge 2 approve PRs
+- TODO HWP: extra docs folder and base64 to avoid accidental opening
+
 # Monday - 2023-07-24
 
 Alex:
