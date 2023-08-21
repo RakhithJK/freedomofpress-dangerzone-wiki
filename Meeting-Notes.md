@@ -1,3 +1,110 @@
+# Monday - 2023-08-21
+
+Alex:
+- Reviewed PRs #515, #510, #509, #508
+- Added fixes to my PR (#523)
+- TODO: Review #386
+- Tested uninstalling Dangerzone on Debian and it does not leave stale folders behind.
+  * Actually, I never tested with __pycache__ folders. I guess I need to retest...
+- TODO: Check if Dangerzone originally used the tmp directory, and then moved to the config one.
+- TODO: Create an issue for fixing the page size problem.
+- TODO: Open an issue for test_update_error that fails randomly
+
+Deeplow:
+- looking at packaging RPM
+- TODO create issue for dark mode on macOS (black)
+- TODO try and try to get an SELinux violation :z argument
+- TODO continue RPM packaging work
+
+Discussion:
+- What is the size of a single page?
+
+  * 1 A4 page - 72 DPI = 595 x 842 pixels
+  * 1 A4 page - 150 DPI = 1240 x 1754 pixels
+
+  We need to account for 3 color channels though (RGB), meaning that the final size is:
+  * 1 A4 page - 72 DPI = 3 x 595 x 842 pixels = 1.43 MiB
+  * 1 A4 page - 150 DPI = 3 x 1240 x 1754 = 6.22 MiB
+
+  If we want to fill 1 GiB of RAM, we need 716 pages (72 DPI) or 165 pages (150 DPI). Note that at some point, we compress the end product, so there will be two files in the same tmpdir (the united ones, and the compressed ones).
+  * What can we do here?
+    1. Can we stream the pages from container 1 to container 2, and call the programs that "unite" them on the stdin or sth?
+       * This would be optimal, but it requires an architecture that we don't have right now (2 containers speaking to each other).
+    2. Can we compress each page that we receive from container 1 (e.g., RGB to PNG)?
+       * The streaming pages feature is a hard requirement for this. Else, we'd need to use an inotify-like mechanism, which is typically not cross-platform.
+       * PNG-compression improvements: 30x - 40x for document types, 2x for photos.
+    3. Can we store the pages in a data dir? (reverting to the way it was before)
+       * Not the best option, as this will leave traces of the file in the computer, especially if the original file existed in a tmp dir or an external device.
+- bdist_rpm deprecation:
+  * RPM packaging commands can take a .toml as an argument.
+    - RPM can now fetch dependencies from pyproject.toml. But our toml file has sections that are poetry-specific [tools.poetry.dependencies] so rpm packaging commands cannot recogize this, but maybe there is a PEP.
+    -  We need to handle removing files from previous installations, even if the RPM that we produce is correct. We need a pre-installation script that will handle removing the stale egg.info dirs, and it needs to work even if no such dirs are present. Also, it needs to exist for quite a lot of time in our codebase, because there may be users out there who forget to update for a while, and we need to cater to them as well.
+- I saw a screenshot in this issue (https://github.com/freedomofpress/dangerzone/pull/508) and I wondered, do we handle dark mode correctly? Reminder that we forced the font color to be black in https://github.com/freedomofpress/dangerzone/pull/487
+- I think the test `test_update_error` is flaky. I've seen it fail a couple of times with "signal not emitted withing 5000ms". We should open an issue.
+- We need to trigger the SELinux bug without Dangerzone. Can we use `chcon` / `restorecon` for that?
+  * The SELinux alert brower is probably not stock Fedora. So the user in #517 _could_ have edited something else as well.
+
+# Wednesday - 2023-08-16
+
+Deeplow:
+  - Replied to users comments over the weekend
+  - make a fix to show immediately the "check for updates" checkbox as soon as the users accepts updates in a prompt.
+  - analysis of language-stripped down versions of DZ to evaluate the impact on app size
+  - helping user troubleshoot Dangerzone failing to start (#514)
+  - TODO: look into https://github.com/freedomofpress/dangerzone/issues/517
+  - TODO: reply https://github.com/freedomofpress/dangerzone/issues/514
+  - TOOD: tacklet error handling but also look into packaging qubes components
+
+Alex:
+- Started looking on some Fedora-related issues (#514, #517, #518)
+- Opened some issues/PR for problems that we found during release.
+
+# Monday - 2023-08-07
+
+Deeplow:
+  - reviewed and merged all pending PRs for 0.4.2 release
+  - continued work on large-test-docs PR to see if we could leave it running over the weekend (wasn't be possible too much work left rebasing)|
+  - TODO: Create release artifacts for Windows
+  - TODO: Create release artifacts for Intel Mac
+
+Alex:
+- TODO: Create release artifacts for M1 Mac
+  * Ping deeplow once it's free, so that he can run the large test
+- TODO: Create release artifacts for Ubuntu/Debian/Fedora
+
+Discussion:
+- We missed CI testing on MacOS M1 platforms
+- We missed GUI testing on installed Debian packages (e.g., PySide2)
+- We should ensure that Poetry runs from the latest Python version.
+- We should ensure that the container.tar.gz is fresh and exists, when building the final Windows / MacOS artifacts.
+
+# Wednesday - 2023-08-02
+
+Deeplow:
+- TODO QA on windows but first check if hwp works there
+- TODO QA on Ubuntu
+- TODO QA on Debian
+
+Alex:
+- TODO QA on MacOS x86 / Apple Silicon
+- TODO QA on Fedora
+
+# Monday - 2023-07-31
+
+Deeplow:
+- Look into flatpak situation
+- Merge 2 approved PRs
+- HWP: extra docs folder and base64 to avoid accidental opening
+- TODO: review "Improve the UX of the update check flow" #490
+- TODO debug issue making tests where CI ran out of space
+
+Alex:
+- Sent a PR for various UX improvements (dangerzone#490)
+- Sent some small PRs for minor improvements (dangerzone#486,487)
+- Looked our Flatpak situation a bit (dangerzone#45)
+- Ready to send a PR for sanitization logic
+- TODO: FIXUP https://github.com/freedomofpress/dangerzone/issues/489
+
 # Wednesday - 2023-07-26
 
 Alex:
