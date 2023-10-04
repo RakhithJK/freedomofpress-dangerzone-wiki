@@ -1,3 +1,190 @@
+# Wednesday - 2023-10-04
+
+Alex:
+- Sent and merged a fix to catch exceptions in the second stage of Qubes conversion (#568)
+- Sent and merged a fix to properly support "dark mode" in our user dialogs (#569)
+- Bumped our Poetry deps (#570)
+- Bumped our version to 0.5.0 (#571)
+- Reviewed the notarytool PR (#558)
+- Started QA for 0.5.0
+  * We have stumbled on some Qubes issues for which we will open GitHub issues.
+
+# Monday - 2023-10-02
+
+Deeplow:
+- rebased and merged "Handle errors in Qubes" (#546)
+- let 0.5.0 running large test in background over the weekend
+- TODO: commit large test results
+
+Alex:
+- Helped with the merging of #550. Required a bit of Git plumbing.
+- Addressed some comments in #561 and merged it.
+- Re-opened #430 to highlight some issues that we haven't addressed.
+- Re-opened the HWP support PR, since we will go with alpine:latest instead of edge.
+
+Discussion:
+- Release 0.5.0:
+  * Revert the HWP support for Apple Silicon @apyrgio
+  * Merge the altool PR once we have tested it during the release @apyrgio
+  * Error handling:
+    - Catch the OCR error on Qubes @apyrgio
+    - Move some error handling scenarios to the stabilitization effort (stable qubes integration) @deeplow
+    - Change the out of RAM message with a more generic one: @deeplow
+      * "Could not start a disposable qube for the file conversion. More information should have shown up on the top-right corner of your screen."
+
+# Wednesday - 2023-09-27
+
+Alex:
+- Merged the PRs for switching to tessdata-fast and for adding installation instructions for Qubes (#548 and #543)
+- Sent a PR (#551) for detecting Qubes errors when we receive EOF, and merged it.
+- Found a nasty bug (#560) that could potentially lead to leaving the last page of a document out.
+- Found an issue with client-side timeouts in the current Qubes implementation (#557)
+- Sent a PR (#561) on fixing #560 and #557
+- Reviewed #554, #556, #546
+
+Deeplow:
+- reviewed "Detect if we received EOF due to a command that failed" #551
+- follow up on PR Open Better "dark mode" support (#550)
+- open PRs for minor Qubes conversion issues (#554 and #556)
+- migrated macOS notarization process and open PR for it (#558)
+- TODO: Handle errors in Qubes #546
+- TODO: Merge the Dark Mode PR
+- TODO: review "Stream page data in real time" #561
+
+# Monday - 2023-09-25
+
+Deeplow:
+- wrapped up Qubes error handling PR (#546)
+- look into contributor PR "Better Dark Mode Support" #550
+- TODO: update notary tools
+- TODO: finish reviewing #550 (dark mode PR)
+
+Alex:
+- Merged 3 PRs
+- Worked on making every read function check the exit code when it receives EOF.
+- TODO: Review the error handling PR
+
+Discussion:
+- Better Dark Mode PR has some challenges in App mocking. See CI failure https://app.circleci.com/pipelines/github/freedomofpress/dangerzone/1813/workflows/6755dd53-cbd2-49f4-89de-c65008d81995/jobs/20737
+- Dangerzone 101 prep
+
+# Wednesday - 2023-09-20
+
+Alex:
+- Sent a PR for slimming down our OCR models
+- Reviewed the WIP error handling PR
+- TODO: Send a fix for detecting exit code of process whenever we reach EOF in our read_* helpers.
+
+Deeplow:
+- reviewed pending PRs:
+    - OCR parameters passing (#544)
+    - RPM packages from an RPM SPEC (#538)
+    - installation instructions for Qubes (#543)
+    - qubes: Add client-side timeouts (#547)
+
+Discussion:
+  - We're running into an issue where if some error happens early in the conversion the conversion, then it won't detect that as the failure reason. Rather, it will detect the fact that it didn't receive the number of pages. So in that case we need to catch also the exit code to understand if the cause. @apyrgio will work on this.
+  - We were thinking about having a server-side limit of 56K pages to detect early failures -- the max an unsigned 16bit int can have (2^(8 + 8)). However, this approach is a bit useless because it'll do all the work server-side just to have a 10K page limitation on the client. We concluded that it's best to have the same 10K limit in the serve and the client.
+
+# Monday - 2023-09-18
+
+Alex:
+- Review dangerzone#537
+- Fixed some issues deeplow commented on (#538, #543, #544, #547)
+- Send a PR for client-side timeouts (dangerzone#547)
+- Wrote an issue about slimming down our language models (dangerzone#545)
+
+# Monday - 2023-09-11
+
+Deeplow:
+- took a look at: Add installation instructions for Qubes" (#543)
+  - question: language #431 to update RPM packaging #543 doubts about the "alpine:edge" (#541 #542) https://wiki.alpinelinux.org/wiki/Edge. We run the risk of not having the package in time or forgetting that we even have ":latest"
+
+Alex:
+- Updated the items for the 0.5.0 roadmap.
+  * Removed the stretch goals that wouldn't cut it for this release, did my best to set due dates for each task.
+- Reviewed and merged dangerzone#451, which adds HWP support on MacOS.
+- Reviewed a PR for Qubes error handling (dangerzone#537)
+- Sent a PR with formal installations instructions for Qubes, as well as some updates on our Qubes RPM packaging PR.
+- Sent a PR that improves the way we pass OCR parameters during sanitization (dangerzone#544)
+- TODO: Update the PR with the installation instructions to make the Qubes RPM to include every tesseract-langpack-* package.
+- TODO: Recap internally the main points of the RPM packaging story
+- TODO: Weigh in on the 1.0.0 vision
+- TODO: Check the discrepancy on the size of RPM language models vs the downloaded language models.
+
+Discussion:
+  - alpine:latest (#540)
+     - deeplow agrees with the assessment for ":latest"
+  - 1.0.0 vision
+  - OCR languages
+  - Let's take a look at the proposed roadmap, see the issues that each of us can work on parallel.
+  - mention GL discussion on slack?
+
+
+# Wednesday - 2023-08-30
+
+Alex:
+- Continue working on RPM packaging: #298, #431, #514
+  * I have managed to follow pretty much the latest conventions regarding SPEC files, and I have created a fully working one, albeit hacky.
+  * I have a more polished version that lacks only the following:
+    - Includes our assets (`/usr/share`) in the final RPM
+    - Run a post install script that fixes the stale `.egg-info`  directories
+    - Allow it to produce a `-qubes.rpm`
+- TODO: Verify that .dist-info is the latest recommendation by Python, and not .egg-info
+- TODO: Consider adding temporary directory for RPM builds in ~/.local/dangerzone-dev/rmp-build/<tmpdir>/...
+
+Deeplow:
+- post on forum
+- continue continue work in Qubes error handling
+
+Discussion:
+- implement client-server shared error codes with an increment of 128
+
+# Monday - 2023-08-28
+
+Alex:
+- Taking a look at our bdist_rpm alternatives
+- Prioritized items for the 0.5.0 milestone
+- TODO: Clear up the 0.5.0 milestone from the stretch goals
+- TODO: Check how SecureDrop Workstation creates their RPM files and incorporate some of the logic in Dangerzone.
+- TODO: Review the Qubes alpha instructions PR
+
+deeplow:
+ - continue RPM packaging issue (#298)
+ - sync 0.5.0 release scoping in prep for planning meeting
+ - follow up on dangerzone.rocks not updating
+ - discuss with user issue where Dangerzone wouldn't start (#514)
+ - create issue about Dangerzone not showing on Gnome Software (#531)
+ - drafting up post for Qubes Forum about DZ alpha (Marek's suggestion)
+ - upgrading dev environment to Fedora 38
+ - test and review Qubes alpha setup instructions (related to the forum post)
+ - TODO: Publish Qubes forum post
+ - TODO: error handling on Qubes and timeouts
+
+# Wednesday - 2023-08-23
+
+deeplow:
+- investigate /tmp space shortage (see #518)
+- found upstream issue with pdftoppm https://github.com/freedomofpress/dangerzone/issues/524
+- merge simple and approved PRs (#510, #509, #508)
+- implement suggestions in PR 'Propagate "update check" prompt to UI checkbox' (#515)
+- final review and approval of: "Post-release fixes for MacOS issues" (#523)
+- Address feedback in large tests PR and merge it
+- Continue RPM packaging work (#298)
+
+Alex:
+- Reviewed PR #386
+- Test uninstall situation in Debian
+- Created issues for page size problems and test_update_error
+- Milestone 0.5.0 discussion
+
+Discussion:
+- SELinux violation (#517): We haven't yet managed to trigger an SELinux violation yet. Will try removing the :Z flag.
+- RPM packaging (#514): We've made progress there, but we don't have a package out yet. We need to pair on this problem fix some remaining issues.
+- Announce Qubes Alpha integration in the Qubes forum:
+  * Also start a GitHub discussion for this feature.
+  * Give a list of issues that we will work on in the next few months.
+
 # Monday - 2023-08-21
 
 Alex:
